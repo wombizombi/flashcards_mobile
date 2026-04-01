@@ -1,0 +1,103 @@
+body {
+    background: #f7f7f7;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Question */
+.card-text {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Explanation */
+.card-explanation {
+    background: #eee;
+    padding: 10px;
+    border-radius: 8px;
+    max-height: 140px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+/* Labels */
+.mode-label {
+    text-align: center;
+    font-weight: bold;
+}
+
+.progress {
+    text-align: right;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Buttons */
+.side-buttons, .extra-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button-with-label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.shortcut-label {
+    font-size: 11px;
+    margin-top: 3px;
+    color: #666;
+}
+
+/* Mobile tweak */
+@media (max-width: 500px) {
+    .card {
+        height: 460px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
