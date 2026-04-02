@@ -1,3 +1,4 @@
+alert("JS is working");
 let cards = [];
 let currentIndex = 0;
 let showingAnswer = false;
