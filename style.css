@@ -3,9 +3,11 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
+    margin: 0;
 }
 
+/* Container */
 .card-container {
     width: 100%;
     max-width: 600px;
@@ -14,18 +16,18 @@ body {
 /* Card */
 .card {
     background: white;
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 20px;
-    height: 420px;
+    min-height: 60vh; /* 🔥 responsive height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* Question */
 .card-text {
-    font-size: 30px;
+    font-size: clamp(20px, 5vw, 28px); /* 🔥 bigger + responsive */
     font-weight: bold;
     text-align: center;
     flex: 1;
@@ -37,32 +39,35 @@ body {
 /* Explanation */
 .card-explanation {
     background: #eee;
-    padding: 10px;
-    border-radius: 8px;
-    max-height: 140px;
+    padding: 12px;
+    border-radius: 10px;
+    max-height: 25vh; /* 🔥 scales with screen */
     overflow-y: auto;
     text-align: center;
+    font-size: 16px;
 }
 
 /* Labels */
 .mode-label {
     text-align: center;
     font-weight: bold;
+    font-size: 14px;
 }
 
 .progress {
     text-align: right;
-    font-size: 12px;
+    font-size: 13px;
     color: #888;
 }
 
-/* Buttons */
+/* Buttons layout */
 .side-buttons, .extra-controls {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
+/* Button wrapper */
 .button-with-label {
     flex: 1;
     display: flex;
@@ -70,34 +75,58 @@ body {
     align-items: center;
 }
 
+/* Buttons */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 14px; /* 🔥 bigger tap area */
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #007bff;
     color: white;
     font-size: 16px;
 }
 
+/* Remove hover for mobile (optional but cleaner) */
 button:hover {
-    background: #0056b3;
+    background: #007bff;
 }
 
+/* Shortcut label */
 .shortcut-label {
-    font-size: 11px;
-    margin-top: 3px;
+    font-size: 12px;
+    margin-top: 4px;
     color: #666;
 }
 
-/* Mobile tweak */
+/* 🔥 MOBILE OPTIMIZATION */
 @media (max-width: 500px) {
+
+    body {
+        padding: 8px;
+    }
+
     .card {
-        height: 460px;
+        padding: 16px;
+        min-height: 70vh;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        touch-action: pan-y; /* allows vertical scroll but handles horizontal swipe */
+    }
+
+    .card-text {
+        font-size: 6vw; /* 🔥 large readable text */
+    }
+
+    .card-explanation {
+        font-size: 15px;
     }
 
     button {
-        font-size: 14px;
-        padding: 8px;
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    /* Stack buttons vertically if cramped */
+    .side-buttons, .extra-controls {
+        flex-direction: column;
     }
 }

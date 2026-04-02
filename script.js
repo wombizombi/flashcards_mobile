@@ -9,6 +9,55 @@ function initSRS(card) {
     if (!card.due) card.due = Date.now();
 }
 
+let startX = 0;
+let endX = 0;
+
+const card = document.querySelector(".card");
+
+card.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+card.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+});
+
+card.addEventListener("touchend", () => {
+    let diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+
+        if (diff > 0) {
+            // Swipe LEFT → animate left
+            card.style.transform = "translateX(-100%)";
+        } else {
+            // Swipe RIGHT → animate right
+            card.style.transform = "translateX(100%)";
+        }
+
+        card.style.opacity = "0";
+
+        setTimeout(() => {
+            if (diff > 0) {
+                nextCard();
+            } else {
+                prevCard();
+            }
+
+            // Reset position
+            card.style.transform = "translateX(0)";
+            card.style.opacity = "1";
+        }, 200);
+    }
+});
+
+card.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+    let diff = endX - startX;
+
+    card.style.transform = `translateX(${diff}px)`;
+});
+
 // Load default JSON
 async function loadCards() {
     const res = await fetch("comptia_flashcards.json");
@@ -166,6 +215,16 @@ document.addEventListener("keydown", function(e) {
         case "3": markEasy(); break;
     }
 });
+
+function nextCard() {
+    currentIndex = (currentIndex + 1) % flashcards.length;
+    loadCard();
+}
+
+function prevCard() {
+    currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
+    loadCard();
+}
 
 
 
