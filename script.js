@@ -97,7 +97,13 @@ function explainCard() {
 }
 
 function resetWeights() {
-    cards.forEach(card => card.interval = 0);
+    const now = Date.now();
+    cards.forEach(c => {
+        c.interval = 0;
+        c.due = now; // Make every card due now
+    });
+    currentIndex = 0;
+    showingAnswer = false;
     showCard();
 }
 
