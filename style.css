@@ -23,16 +23,13 @@ body {
     background: white;
     border-radius: 16px;
     padding: 20px;
-
     flex: 1; /* fills available space */
     min-height: 0; /* 🔥 prevents overflow issues */
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    flex: 1 1 auto;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-
     transition: transform 0.2s ease, opacity 0.2s ease;
     touch-action: pan-y;
 }
@@ -121,17 +118,57 @@ button:hover {
     bottom: 0;
     background: #f7f7f7;
     padding-bottom: 10px;
+    z-index: 10;
+}
+
+/* Temporary flash effect */
+.flash-again {
+    background-color: #f8d7da !important; /* red */
+}
+
+.flash-good {
+    background-color: #d4edda !important; /* green */
+}
+
+.flash-easy {
+    background-color: #d1ecf1 !important; /* blue */
 }
 
 /* Mobile tweaks */
+/* 🔥 MOBILE OPTIMIZATION */
 @media (max-width: 500px) {
 
-    .card-text {
-        font-size: 6vw;
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;   /* full viewport height safely on mobile */
     }
 
+    .card {
+        flex: 1 1 auto;      /* take available space */
+        min-height: 0;       /* prevent overflow pushing buttons down */
+        margin-bottom: 10px; /* small spacing for buttons */
+    }
+
+    /* Buttons container */
+    .side-buttons, .extra-controls {
+        flex-direction: row;   /* horizontal buttons */
+        flex-wrap: wrap;       /* wrap if needed */
+        justify-content: center;
+        gap: 8px;
+        margin-top: 0;
+    }
+
+    /* Buttons */
     button {
-        font-size: 15px;
-        padding: 12px;
+        flex: 1 1 45%;        /* max 2 per row */
+        font-size: 14px;      /* slightly smaller for mobile */
+        padding: 10px;        /* smaller tap area, fits better */
+    }
+
+    /* Optional: shrink labels */
+    .shortcut-label {
+        font-size: 11px;
+        margin-top: 2px;
     }
 }

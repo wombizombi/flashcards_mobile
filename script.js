@@ -1,5 +1,3 @@
-alert("JS is working");
-
 let cards = [];
 let currentIndex = 0;
 let showingAnswer = false;
@@ -23,6 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let startX = 0;
     let startY = 0;
 
+    const btnAgain = document.getElementById("btnAgain");
+    const btnGood = document.getElementById("btnGood");
+    const btnEasy = document.getElementById("btnEasy");
+
+    function flashButton(button, className) {
+        button.classList.add(className);
+        setTimeout(() => button.classList.remove(className), 300);
+    }
+
     cardElement.addEventListener("touchstart", (e) => {
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
@@ -35,15 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let diffX = currentX - startX;
         let diffY = currentY - startY;
 
-        if (diffX > 0) {
-        cardElement.style.background = "#d4edda"; // green
-        } else if (diffX < 0) {
-        cardElement.style.background = "#f8d7da"; // red
-        } else if (diffY < 0) {
-        cardElement.style.background = "#d1ecf1"; // blue
-        }
-
-        // Move card with finger
         cardElement.style.transform = `translate(${diffX}px, ${diffY}px)`;
     });
 
@@ -56,25 +54,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const threshold = 60;
 
-        // Determine swipe direction
+        // Horizontal swipe
         if (Math.abs(diffX) > Math.abs(diffY)) {
-            // Horizontal swipe
             if (Math.abs(diffX) > threshold) {
-
                 if (diffX > 0) {
                     // 👉 RIGHT = GOOD
                     cardElement.style.transform = "translateX(120%)";
                     cardElement.style.opacity = "0";
+                    flashButton(btnGood, "flash-good");
 
                     setTimeout(() => {
                         markGood();
                         resetCard();
                     }, 200);
-
                 } else {
                     // 👈 LEFT = AGAIN
                     cardElement.style.transform = "translateX(-120%)";
                     cardElement.style.opacity = "0";
+                    flashButton(btnAgain, "flash-again");
 
                     setTimeout(() => {
                         markAgain();
@@ -89,12 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 // ⬆️ UP = EASY
                 cardElement.style.transform = "translateY(-120%)";
                 cardElement.style.opacity = "0";
+                flashButton(btnEasy, "flash-easy");
 
                 setTimeout(() => {
                     markEasy();
                     resetCard();
                 }, 200);
-
                 return;
             }
         }
@@ -106,7 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function resetCard() {
         cardElement.style.transform = "translate(0, 0)";
         cardElement.style.opacity = "1";
-        cardElement.style.background = "white";
     }
 
 });
