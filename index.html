@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flashcards</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 
 <div class="card-container">
 
-  <!-- Flashcard -->
+  <!-- Deck Selector -->
+  <div class="deck-selector">
+    <label for="deckSelect">Select Deck:</label>
+    <select id="deckSelect" onchange="switchDeck()"></select>
+    <button onclick="loadFilePrompt()">Load New Deck</button>
+  </div>
+
+  <!-- Card Display -->
   <div id="card" class="card">
     <div id="mode" class="mode-label">QUESTION</div>
     <div id="text" class="card-text"></div>
     <div id="explanation" class="card-explanation"></div>
   </div>
 
-  <!-- Progress indicator -->
   <div id="progress" class="progress"></div>
 
-  <!-- Navigation buttons -->
+  <!-- Navigation -->
   <div class="side-buttons">
-    <button onclick="prev()">⬅ Prev</button>
-    <button onclick="flip()">Flip</button>
-    <button onclick="next()">Next ➡</button>
+    <button onclick="prevCard()">⬅ Prev</button>
+    <button onclick="flipCard()">Flip</button>
+    <button onclick="nextCard()">Next ➡</button>
   </div>
 
-  <!-- Grading buttons -->
+  <!-- Controls -->
   <div class="extra-controls">
-    <button onclick="markAgain()">Again</button>
-    <button onclick="markGood()">Good</button>
-    <button onclick="markEasy()">Easy</button>
-    <button onclick="resetWeights()">Reset Weight</button>
-  </div>
-
-  <!-- Extra management buttons -->
-  <div class="extra-controls">
-    <button onclick="randomCard()">Random</button>
-    <button onclick="shuffleCards()">Shuffle</button>
     <button onclick="alphabetizeCards()">A-Z</button>
-    <button onclick="explainCard()">Explain</button>
-    <button onclick="document.getElementById('loadFile').click()">Load JSON</button>
+    <button onclick="shuffleCards()">Shuffle</button>
+    <button onclick="randomCard()">Random</button>
+    <button onclick="showExplanation()">Explain</button>
   </div>
 
 </div>
 
-<!-- Hidden file input for loading JSON -->
+<!-- Hidden file input -->
 <input type="file" id="loadFile" accept=".json" style="display:none;">
 
 </body>
