@@ -7,6 +7,8 @@ let currentDeckName = ""; // currently selected deck
 let cards = [];           // current deck's cards
 let currentIndex = 0;
 let showingAnswer = false;
+let isEditing = false;
+let explanationVisible = false;
 
 // =======================
 // Load JSON deck from file
@@ -57,9 +59,18 @@ function switchDeck(name = null) {
     if (name) currentDeckName = name;
     else currentDeckName = document.getElementById("deckSelect").value;
 
-    cards = decks[currentDeckName] || [];
+    // 🔥 Try localStorage first
+    const saved = localStorage.getItem(currentDeckName);
+
+    if (saved) {
+        cards = JSON.parse(saved);
+    } else {
+        cards = decks[currentDeckName] || [];
+    }
+
     currentIndex = 0;
     showingAnswer = false;
+
     showCard();
 }
 
@@ -71,6 +82,9 @@ function showCard() {
     const modeEl = document.getElementById("mode");
     const explEl = document.getElementById("explanation");
     const progressEl = document.getElementById("progress");
+
+    const btnEdit = document.getElementById("btnEdit");
+    const btnUpdate = document.getElementById("btnUpdate");
 
     if (cards.length === 0) {
         textEl.innerText = "No cards loaded!";
@@ -85,8 +99,17 @@ function showCard() {
     textEl.innerText = showingAnswer ? card.answer : card.question;
     modeEl.innerText = showingAnswer ? "ANSWER" : "QUESTION";
 
-    // hide explanation until requested
+    // 🔥 Reset explanation UI
     explEl.style.display = "none";
+    explEl.setAttribute("readonly", true);
+    explEl.value = "";
+
+    explanationVisible = false;
+    isEditing = false;
+
+    // 🔥 Disable buttons
+    btnEdit.disabled = true;
+    btnUpdate.disabled = true;
 
     progressEl.innerText = `${currentIndex + 1} / ${cards.length}`;
 }
@@ -123,8 +146,19 @@ function showExplanation() {
     const card = cards[currentIndex];
     const explEl = document.getElementById("explanation");
 
-    explEl.value = card.explanation || "";
+    const btnEdit = document.getElementById("btnEdit");
+
+    // 🔥 Always show something
+    explEl.value = card.explanation && card.explanation.trim() !== ""
+        ? card.explanation
+        : "No explanation available";
+
     explEl.style.display = "block";
+
+    explanationVisible = true;
+
+    // 🔥 Enable edit now
+    btnEdit.disabled = false;
 }
 
 // =======================
@@ -172,18 +206,25 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-let isEditing = false;
 
 function editCard() {
-    if (cards.length === 0) return;
+    if (!explanationVisible) return;
 
     const explEl = document.getElementById("explanation");
+    const btnUpdate = document.getElementById("btnUpdate");
 
-    explEl.style.display = "block";
+    // If placeholder text, clear it
+    if (explEl.value === "No explanation available") {
+        explEl.value = "";
+    }
+
     explEl.removeAttribute("readonly");
     explEl.focus();
 
     isEditing = true;
+
+    // 🔥 Enable update
+    btnUpdate.disabled = false;
 }
 
 // ----------------------
@@ -221,6 +262,23 @@ function downloadDeck() {
     a.click();
 
     URL.revokeObjectURL(url);
+}
+
+function updateCard() {
+    if (!isEditing || cards.length === 0) return;
+
+    const explEl = document.getElementById("explanation");
+    const card = cards[currentIndex];
+
+    card.explanation = explEl.value;
+
+    explEl.setAttribute("readonly", true);
+    isEditing = false;
+
+    // 🔥 AUTO SAVE
+    localStorage.setItem(currentDeckName, JSON.stringify(cards));
+
+    alert("Saved locally!");
 }
 
 // =======================
