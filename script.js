@@ -21,45 +21,93 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!cardElement) return;
 
     let startX = 0;
+    let startY = 0;
 
     cardElement.addEventListener("touchstart", (e) => {
         startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
     });
 
     cardElement.addEventListener("touchmove", (e) => {
         let currentX = e.touches[0].clientX;
-        let diff = currentX - startX;
-        cardElement.style.transform = `translateX(${diff}px)`;
+        let currentY = e.touches[0].clientY;
+
+        let diffX = currentX - startX;
+        let diffY = currentY - startY;
+
+        if (diffX > 0) {
+        cardElement.style.background = "#d4edda"; // green
+        } else if (diffX < 0) {
+        cardElement.style.background = "#f8d7da"; // red
+        } else if (diffY < 0) {
+        cardElement.style.background = "#d1ecf1"; // blue
+        }
+
+        // Move card with finger
+        cardElement.style.transform = `translate(${diffX}px, ${diffY}px)`;
     });
 
     cardElement.addEventListener("touchend", (e) => {
         let endX = e.changedTouches[0].clientX;
-        let diff = startX - endX;
+        let endY = e.changedTouches[0].clientY;
 
-        if (Math.abs(diff) > 50) {
+        let diffX = endX - startX;
+        let diffY = endY - startY;
 
-            if (diff > 0) {
-                cardElement.style.transform = "translateX(-100%)";
-            } else {
-                cardElement.style.transform = "translateX(100%)";
-            }
+        const threshold = 60;
 
-            cardElement.style.opacity = "0";
+        // Determine swipe direction
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            // Horizontal swipe
+            if (Math.abs(diffX) > threshold) {
 
-            setTimeout(() => {
-                if (diff > 0) {
-                    nextCard();
+                if (diffX > 0) {
+                    // 👉 RIGHT = GOOD
+                    cardElement.style.transform = "translateX(120%)";
+                    cardElement.style.opacity = "0";
+
+                    setTimeout(() => {
+                        markGood();
+                        resetCard();
+                    }, 200);
+
                 } else {
-                    prevCard();
-                }
+                    // 👈 LEFT = AGAIN
+                    cardElement.style.transform = "translateX(-120%)";
+                    cardElement.style.opacity = "0";
 
-                cardElement.style.transform = "translateX(0)";
-                cardElement.style.opacity = "1";
-            }, 200);
+                    setTimeout(() => {
+                        markAgain();
+                        resetCard();
+                    }, 200);
+                }
+                return;
+            }
         } else {
-            cardElement.style.transform = "translateX(0)";
+            // Vertical swipe
+            if (Math.abs(diffY) > threshold && diffY < 0) {
+                // ⬆️ UP = EASY
+                cardElement.style.transform = "translateY(-120%)";
+                cardElement.style.opacity = "0";
+
+                setTimeout(() => {
+                    markEasy();
+                    resetCard();
+                }, 200);
+
+                return;
+            }
         }
+
+        // Snap back if not enough swipe
+        resetCard();
     });
+
+    function resetCard() {
+        cardElement.style.transform = "translate(0, 0)";
+        cardElement.style.opacity = "1";
+        cardElement.style.background = "white";
+    }
 
 });
 
@@ -97,7 +145,11 @@ function showCard() {
         return;
     }
 
-    const currentCard = dueCards[currentIndex % dueCards.length];
+    if (currentIndex >= dueCards.length) {
+    currentIndex = 0;
+}
+
+const currentCard = dueCards[currentIndex];
 
     document.getElementById("mode").innerText = showingAnswer ? "ANSWER" : "QUESTION";
     document.getElementById("text").innerText =
@@ -118,14 +170,14 @@ function flip() {
 }
 
 function next() {
-    currentIndex = (currentIndex + 1) % cards.length;
-    showingAnswer = false;
+    const dueCards = getDueCards();
+    currentIndex = (currentIndex + 1) % dueCards.length;
     showCard();
 }
 
 function prev() {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    showingAnswer = false;
+    const dueCards = getDueCards();
+    currentIndex = (currentIndex - 1 + dueCards.length) % dueCards.length;
     showCard();
 }
 

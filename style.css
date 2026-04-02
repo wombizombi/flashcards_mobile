@@ -11,6 +11,11 @@ body {
 .card-container {
     width: 100%;
     max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100dvh; /* 🔥 better than 100vh on mobile */
 }
 
 /* Card */
@@ -18,19 +23,28 @@ body {
     background: white;
     border-radius: 16px;
     padding: 20px;
-    min-height: 60vh; /* 🔥 responsive height */
+
+    flex: 1; /* fills available space */
+    min-height: 0; /* 🔥 prevents overflow issues */
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    touch-action: pan-y;
 }
 
 /* Question */
 .card-text {
-    font-size: clamp(20px, 5vw, 28px); /* 🔥 bigger + responsive */
+    font-size: clamp(20px, 5vw, 28px);
     font-weight: bold;
     text-align: center;
+
     flex: 1;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,8 +55,10 @@ body {
     background: #eee;
     padding: 12px;
     border-radius: 10px;
-    max-height: 25vh; /* 🔥 scales with screen */
+
+    max-height: 25vh;
     overflow-y: auto;
+
     text-align: center;
     font-size: 16px;
 }
@@ -61,15 +77,17 @@ body {
 }
 
 /* Buttons layout */
-.side-buttons, .extra-controls {
+.side-buttons,
+.extra-controls {
     display: flex;
     gap: 10px;
     margin-top: 12px;
+    flex-wrap: wrap;
 }
 
 /* Button wrapper */
 .button-with-label {
-    flex: 1;
+    flex: 1 1 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,7 +96,7 @@ body {
 /* Buttons */
 button {
     width: 100%;
-    padding: 14px; /* 🔥 bigger tap area */
+    padding: 14px;
     border: none;
     border-radius: 10px;
     background: #007bff;
@@ -86,7 +104,6 @@ button {
     font-size: 16px;
 }
 
-/* Remove hover for mobile (optional but cleaner) */
 button:hover {
     background: #007bff;
 }
@@ -98,35 +115,23 @@ button:hover {
     color: #666;
 }
 
-/* 🔥 MOBILE OPTIMIZATION */
+/* Sticky controls (like an app) */
+.extra-controls {
+    position: sticky;
+    bottom: 0;
+    background: #f7f7f7;
+    padding-bottom: 10px;
+}
+
+/* Mobile tweaks */
 @media (max-width: 500px) {
 
-    body {
-        padding: 8px;
-    }
-
-    .card {
-        padding: 16px;
-        min-height: 70vh;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-        touch-action: pan-y; /* allows vertical scroll but handles horizontal swipe */
-    }
-
     .card-text {
-        font-size: 6vw; /* 🔥 large readable text */
-    }
-
-    .card-explanation {
-        font-size: 15px;
+        font-size: 6vw;
     }
 
     button {
         font-size: 15px;
         padding: 12px;
-    }
-
-    /* Stack buttons vertically if cramped */
-    .side-buttons, .extra-controls {
-        flex-direction: column;
     }
 }
