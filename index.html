@@ -38,16 +38,19 @@
 
   <!-- Controls -->
   <div class="extra-controls">
-    <button onclick="alphabetizeCards()">A-Z</button>
-    <button onclick="shuffleCards()">Shuffle</button>
-    <button onclick="randomCard()">Random</button>
-    <button onclick="showExplanation()">Explain</button>
-    <button id="btnEdit" onclick="editCard()" disabled>Edit</button>
-    <button id="btnUpdate" onclick="updateCard()" disabled>Update</button>
-    <button onclick="downloadDeck()">Download</button>
-    <button onclick="editCard()">Edit</button>
-    <button onclick="saveCard()">Save</button>
-  </div>
+  <button onclick="alphabetizeCards()">A-Z</button>
+  <button onclick="shuffleCards()">Shuffle</button>
+  <button onclick="randomCard()">Random</button>
+  <button onclick="showExplanation()">Explain</button>
+
+  <!-- Edit / Update -->
+  <button id="btnEdit" onclick="editCard()" disabled>Edit Explanation</button>
+  <button id="btnUpdate" onclick="updateCard()" disabled>Update Explanation</button>
+
+  <!-- Save / Download -->
+  <button id="btnSave" onclick="saveCard()">Save</button>
+  <button id="btnDownload" onclick="downloadDeck()">Download Deck</button>
+</div>
 
 </div>
 
