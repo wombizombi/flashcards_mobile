@@ -1,65 +1,71 @@
 alert("JS is working");
+
 let cards = [];
 let currentIndex = 0;
 let showingAnswer = false;
 
 const DAY = 24 * 60 * 60 * 1000;
 
+// Initialize SRS
 function initSRS(card) {
     if (!card.interval) card.interval = 1;
     if (!card.due) card.due = Date.now();
 }
 
-let startX = 0;
-let endX = 0;
+// ----------------------
+// SWIPE FUNCTIONALITY
+// ----------------------
+document.addEventListener("DOMContentLoaded", () => {
 
-const card = document.querySelector(".card");
+    const cardElement = document.querySelector(".card");
+    if (!cardElement) return;
 
-card.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-});
+    let startX = 0;
 
-card.addEventListener("touchmove", (e) => {
-    endX = e.touches[0].clientX;
-});
+    cardElement.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    });
 
-card.addEventListener("touchend", () => {
-    let diff = startX - endX;
+    cardElement.addEventListener("touchmove", (e) => {
+        let currentX = e.touches[0].clientX;
+        let diff = currentX - startX;
+        cardElement.style.transform = `translateX(${diff}px)`;
+    });
 
-    if (Math.abs(diff) > 50) {
+    cardElement.addEventListener("touchend", (e) => {
+        let endX = e.changedTouches[0].clientX;
+        let diff = startX - endX;
 
-        if (diff > 0) {
-            // Swipe LEFT → animate left
-            card.style.transform = "translateX(-100%)";
-        } else {
-            // Swipe RIGHT → animate right
-            card.style.transform = "translateX(100%)";
-        }
+        if (Math.abs(diff) > 50) {
 
-        card.style.opacity = "0";
-
-        setTimeout(() => {
             if (diff > 0) {
-                nextCard();
+                cardElement.style.transform = "translateX(-100%)";
             } else {
-                prevCard();
+                cardElement.style.transform = "translateX(100%)";
             }
 
-            // Reset position
-            card.style.transform = "translateX(0)";
-            card.style.opacity = "1";
-        }, 200);
-    }
+            cardElement.style.opacity = "0";
+
+            setTimeout(() => {
+                if (diff > 0) {
+                    nextCard();
+                } else {
+                    prevCard();
+                }
+
+                cardElement.style.transform = "translateX(0)";
+                cardElement.style.opacity = "1";
+            }, 200);
+        } else {
+            cardElement.style.transform = "translateX(0)";
+        }
+    });
+
 });
 
-card.addEventListener("touchmove", (e) => {
-    endX = e.touches[0].clientX;
-    let diff = endX - startX;
-
-    card.style.transform = `translateX(${diff}px)`;
-});
-
-// Load default JSON
+// ----------------------
+// LOAD CARDS
+// ----------------------
 async function loadCards() {
     const res = await fetch("comptia_flashcards.json");
     cards = await res.json();
@@ -70,11 +76,17 @@ async function loadCards() {
     showCard();
 }
 
+// ----------------------
+// SRS LOGIC
+// ----------------------
 function getDueCards() {
     const now = Date.now();
     return cards.filter(c => c.due <= now);
 }
 
+// ----------------------
+// DISPLAY CARD
+// ----------------------
 function showCard() {
     const dueCards = getDueCards();
 
@@ -85,11 +97,11 @@ function showCard() {
         return;
     }
 
-    const card = dueCards[currentIndex % dueCards.length];
+    const currentCard = dueCards[currentIndex % dueCards.length];
 
     document.getElementById("mode").innerText = showingAnswer ? "ANSWER" : "QUESTION";
     document.getElementById("text").innerText =
-        showingAnswer ? card.answer : card.question;
+        showingAnswer ? currentCard.answer : currentCard.question;
 
     document.getElementById("progress").innerText =
         `${currentIndex + 1} / ${dueCards.length}`;
@@ -97,6 +109,9 @@ function showCard() {
     clearExplanation();
 }
 
+// ----------------------
+// CARD CONTROLS
+// ----------------------
 function flip() {
     showingAnswer = !showingAnswer;
     showCard();
@@ -132,42 +147,49 @@ function alphabetizeCards() {
     showCard();
 }
 
-// Explain (GitHub Pages safe fallback)
+// ----------------------
+// EXPLANATION
+// ----------------------
 function explainCard() {
-    const card = cards[currentIndex];
+    const currentCard = cards[currentIndex];
     document.getElementById("explanation").innerText =
-        `Explanation:\n${card.answer}`;
+        `Explanation:\n${currentCard.answer}`;
 }
 
-// Clear explanation
 function clearExplanation() {
     document.getElementById("explanation").innerText = "";
 }
 
+// ----------------------
+// SRS BUTTONS
+// ----------------------
 function markAgain() {
-    const card = getDueCards()[currentIndex];
-    card.interval = 1;
-    card.due = Date.now() + DAY;
+    const currentCard = getDueCards()[currentIndex];
+    currentCard.interval = 1;
+    currentCard.due = Date.now() + DAY;
 
     nextCard();
 }
 
 function markGood() {
-    const card = getDueCards()[currentIndex];
-    card.interval = Math.round(card.interval * 2);
-    card.due = Date.now() + card.interval * DAY;
+    const currentCard = getDueCards()[currentIndex];
+    currentCard.interval = Math.round(currentCard.interval * 2);
+    currentCard.due = Date.now() + currentCard.interval * DAY;
 
     nextCard();
 }
 
 function markEasy() {
-    const card = getDueCards()[currentIndex];
-    card.interval = Math.round(card.interval * 3);
-    card.due = Date.now() + card.interval * DAY;
+    const currentCard = getDueCards()[currentIndex];
+    currentCard.interval = Math.round(currentCard.interval * 3);
+    currentCard.due = Date.now() + currentCard.interval * DAY;
 
     nextCard();
 }
 
+// ----------------------
+// NAVIGATION (USED BY SWIPE)
+// ----------------------
 function nextCard() {
     currentIndex++;
     showingAnswer = false;
@@ -175,6 +197,15 @@ function nextCard() {
     showCard();
 }
 
+function prevCard() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    showingAnswer = false;
+    showCard();
+}
+
+// ----------------------
+// STORAGE
+// ----------------------
 function saveProgress() {
     localStorage.setItem("flashcards", JSON.stringify(cards));
 }
@@ -186,7 +217,9 @@ function loadProgress() {
     }
 }
 
-// Load JSON from file
+// ----------------------
+// FILE UPLOAD
+// ----------------------
 document.getElementById('loadFile').addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -201,7 +234,9 @@ document.getElementById('loadFile').addEventListener('change', function(event) {
     reader.readAsText(file);
 });
 
-// Keyboard shortcuts (desktop)
+// ----------------------
+// KEYBOARD SHORTCUTS
+// ----------------------
 document.addEventListener("keydown", function(e) {
     switch(e.key.toLowerCase()) {
         case "arrowleft": prev(); break;
@@ -217,16 +252,5 @@ document.addEventListener("keydown", function(e) {
     }
 });
 
-function nextCard() {
-    currentIndex = (currentIndex + 1) % flashcards.length;
-    loadCard();
-}
-
-function prevCard() {
-    currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
-    loadCard();
-}
-
-
-
+// ----------------------
 loadCards();
