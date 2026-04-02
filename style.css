@@ -1,6 +1,6 @@
-/* =========================
-   GENERAL RESET & BODY
-   ========================= */
+/* -------------------------
+   GENERAL STYLING
+------------------------- */
 body {
     margin: 0;
     padding: 10px;
@@ -10,9 +10,6 @@ body {
     justify-content: center;
 }
 
-/* =========================
-   CARD CONTAINER
-   ========================= */
 .card-container {
     width: 100%;
     max-width: 600px;
@@ -21,82 +18,91 @@ body {
     align-items: stretch;
 }
 
-/* =========================
+/* -------------------------
    DECK SELECTOR
-   ========================= */
+------------------------- */
 .deck-selector {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     justify-content: center;
+    align-items: center;
 }
 
-.deck-selector select, 
+.deck-selector select,
 .deck-selector button {
-    padding: 10px;
+    flex: 1 1 120px;
+    padding: 8px 10px;
     font-size: 14px;
     border-radius: 8px;
     border: 1px solid #ccc;
 }
 
-/* =========================
+/* -------------------------
    CARD
-   ========================= */
+------------------------- */
 .card {
     background: #fff;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
     min-height: 200px;
-    margin-bottom: 12px;
-    text-align: center;
 }
 
-/* Mode label */
 .mode-label {
     font-weight: bold;
     font-size: 14px;
-    margin-bottom: 8px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-/* Card text */
 .card-text {
     font-size: clamp(20px, 5vw, 28px);
     font-weight: bold;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-/* Explanation box */
 .card-explanation {
     background: #eee;
-    padding: 12px;
     border-radius: 10px;
+    padding: 10px;
     font-size: 16px;
-    max-height: 25vh;
-    overflow-y: auto;
-    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    display: none; /* hidden by default */
 }
 
-/* Progress text */
+/* -------------------------
+   PROGRESS
+------------------------- */
 .progress {
-    text-align: right;
     font-size: 13px;
     color: #888;
-    margin-bottom: 8px;
+    text-align: right;
+    margin-bottom: 10px;
 }
 
-/* =========================
+/* -------------------------
    BUTTONS
-   ========================= */
-button {
-    flex: 1 1 auto;
+------------------------- */
+.side-buttons,
+.extra-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.side-buttons button,
+.extra-controls button {
+    flex: 1 1 45%;  /* two per row on small screens */
     padding: 12px;
     font-size: 16px;
     border: none;
@@ -104,55 +110,32 @@ button {
     background: #007bff;
     color: white;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-button:hover {
+.side-buttons button:hover,
+.extra-controls button:hover {
     background: #0056b3;
 }
 
-/* =========================
-   NAVIGATION & CONTROLS
-   ========================= */
-.side-buttons,
-.extra-controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 12px;
-}
-
-.side-buttons button,
-.extra-controls button {
-    flex: 1 1 45%;
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-   ========================= */
+/* -------------------------
+   MOBILE ADJUSTMENTS
+------------------------- */
 @media (max-width: 500px) {
-    .deck-selector {
-        flex-direction: column;
-        gap: 6px;
-        align-items: stretch;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px;
-    }
-
     .side-buttons button,
     .extra-controls button {
-        flex: 1 1 100%;
+        font-size: 14px;
+        padding: 10px;
+        flex: 1 1 48%; /* keep 2 per row on mobile */
+    }
+
+    .deck-selector select,
+    .deck-selector button {
+        flex: 1 1 48%;
+        font-size: 14px;
     }
 
     .card-text {
         font-size: clamp(18px, 6vw, 24px);
-    }
-
-    .card-explanation {
-        font-size: 14px;
-        max-height: 20vh;
     }
 }
