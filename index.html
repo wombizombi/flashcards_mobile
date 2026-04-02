@@ -11,67 +11,43 @@
 
 <div class="card-container">
 
-  <!-- Card Display -->
+  <!-- Flashcard -->
   <div id="card" class="card">
     <div id="mode" class="mode-label">QUESTION</div>
     <div id="text" class="card-text"></div>
     <div id="explanation" class="card-explanation"></div>
   </div>
 
-  <!-- Progress -->
+  <!-- Progress indicator -->
   <div id="progress" class="progress"></div>
 
-  <!-- Navigation Buttons -->
+  <!-- Navigation buttons -->
   <div class="side-buttons">
-    <div class="button-with-label">
-      <button onclick="prev()">⬅ Prev</button>
-    </div>
-    <div class="button-with-label">
-      <button onclick="flip()">Show Answer</button>
-    </div>
-    <div class="button-with-label">
-      <button onclick="next()">Next ➡</button>
-    </div>
+    <button onclick="prev()">⬅ Prev</button>
+    <button onclick="flip()">Flip</button>
+    <button onclick="next()">Next ➡</button>
   </div>
 
-  <!-- Grading Buttons -->
+  <!-- Grading buttons -->
   <div class="extra-controls">
-    <div class="button-with-label">
-      <button onclick="markAgain()">Again</button>
-    </div>
-    <div class="button-with-label">
-      <button onclick="markGood()">Good</button>
-    </div>
-    <div class="button-with-label">
-      <button onclick="markEasy()">Easy</button>
-    </div>
-    <div class="button-with-label">
-      <button onclick="resetWeights()">Reset Weight</button>
-    </div>
+    <button onclick="markAgain()">Again</button>
+    <button onclick="markGood()">Good</button>
+    <button onclick="markEasy()">Easy</button>
+    <button onclick="resetWeights()">Reset Weight</button>
   </div>
 
-  <!-- Extra Controls -->
+  <!-- Extra management buttons -->
   <div class="extra-controls">
-    <div class="button-with-label">
-      <button onclick="randomCard()">Random</button>
-    </div>
-    <div class="button-with-label">
-      <button onclick="shuffleCards()">Shuffle</button>
-    </div>
-    <div class="button-with-label">
-      <button onclick="alphabetizeCards()">A-Z</button>
-    </div>
-    <div class="button-with-label">
-      <button onclick="explainCard()">Explain</button>
-    </div>
-    <div class="button-with-label">
-      <button onclick="document.getElementById('loadFile').click()">Load</button>
-    </div>
+    <button onclick="randomCard()">Random</button>
+    <button onclick="shuffleCards()">Shuffle</button>
+    <button onclick="alphabetizeCards()">A-Z</button>
+    <button onclick="explainCard()">Explain</button>
+    <button onclick="document.getElementById('loadFile').click()">Load JSON</button>
   </div>
 
 </div>
 
-<!-- Hidden file input -->
+<!-- Hidden file input for loading JSON -->
 <input type="file" id="loadFile" accept=".json" style="display:none;">
 
 </body>
