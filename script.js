@@ -62,17 +62,26 @@ document.getElementById('loadFile').addEventListener('change', function(e){
 });
 
 function resetWeights() {
-  if (!cards || cards.length === 0) return;
+    if (!cards || cards.length === 0) return;
 
-  cards.forEach(card => {
-    card.interval = 0;         // or 1 if you prefer
-    card.due = Date.now();     // reset due date
-  });
+    // Reset each card's interval and due date
+    cards.forEach(card => {
+        card.interval = 0;         // reset weight
+        card.due = Date.now();     // make it immediately due
+    });
 
-  currentIndex = 0;
-  showingAnswer = false;
-  showCard();
-  alert("All card weights have been reset!");
+    // Reset to first card
+    currentIndex = 0;
+    showingAnswer = false;
+
+    // Update display
+    showCard();
+
+    // Optional: save progress
+    saveProgress();
+
+    // Optional: confirm reset
+    alert("All card weights have been reset!");
 }
 
 window.onload = loadCards;
