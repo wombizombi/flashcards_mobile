@@ -1,80 +1,144 @@
+/* ---------------------- */
+/* GENERAL STYLING        */
+/* ---------------------- */
 body {
-  background: #f7f7f7;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  margin: 0;
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
 }
 
+/* ---------------------- */
+/* CARD CONTAINER         */
+/* ---------------------- */
 .card-container {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
 }
 
+/* ---------------------- */
+/* CARD                   */
+/* ---------------------- */
 .card {
-  width: 100%;
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 200px;
 }
 
 .card-text {
-  font-size: clamp(20px, 5vw, 28px);
-  text-align: center;
-  margin-bottom: 10px;
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
 }
 
 .card-explanation {
-  text-align: center;
-  font-size: 16px;
-  background: #eee;
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
+    font-size: 16px;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 10px;
+    max-height: 25vh;
+    overflow-y: auto;
 }
 
+/* ---------------------- */
+/* LABELS & PROGRESS      */
+/* ---------------------- */
 .mode-label {
-  font-weight: bold;
-  margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
 }
 
 .progress {
-  text-align: right;
-  width: 100%;
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
+    text-align: right;
+    font-size: 13px;
+    color: #888;
 }
 
-.side-buttons, .extra-controls {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 8px;
+/* ---------------------- */
+/* BUTTON GROUPS          */
+/* ---------------------- */
+.side-buttons,
+.extra-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
 }
 
-button {
-  padding: 12px 18px;
-  border: none;
-  border-radius: 8px;
-  background: #007bff;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
+.side-buttons button,
+.extra-controls button {
+    flex: 1 1 45%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
 }
 
-button:hover {
-  background: #0056b3;
+.side-buttons button:hover,
+.extra-controls button:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------------- */
+/* SHORTCUT LABELS        */
+/* ---------------------- */
+.shortcut-label {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* ---------------------- */
+/* FLASH EFFECTS          */
+/* ---------------------- */
+.flash-again {
+    background-color: #f8d7da !important;
+}
+
+.flash-good {
+    background-color: #d4edda !important;
+}
+
+.flash-easy {
+    background-color: #d1ecf1 !important;
+}
+
+/* ---------------------- */
+/* MOBILE OPTIMIZATION     */
+/* ---------------------- */
+@media (max-width: 500px) {
+    .side-buttons button,
+    .extra-controls button {
+        flex: 1 1 100%; /* full width buttons on mobile */
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .card-text {
+        font-size: clamp(18px, 6vw, 24px);
+    }
+
+    .card-explanation {
+        font-size: 14px;
+        max-height: 20vh;
+    }
 }
