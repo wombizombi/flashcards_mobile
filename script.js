@@ -73,20 +73,22 @@ function showCard() {
     const progressEl = document.getElementById("progress");
 
     if (cards.length === 0) {
-        textEl.textContent = "📂 No cards in this deck!";
-        modeEl.textContent = "";
-        explEl.textContent = "";
-        progressEl.textContent = "";
+        textEl.innerText = "No cards loaded!";
+        modeEl.innerText = "";
+        explEl.value = "";
+        progressEl.innerText = "";
         return;
     }
 
     const card = cards[currentIndex];
 
-    textEl.textContent = showingAnswer ? (card.answer || "") : (card.question || "");
-    modeEl.textContent = showingAnswer ? "ANSWER" : "QUESTION";
-    explEl.textContent = ""; // hide explanation by default
+    textEl.innerText = showingAnswer ? card.answer : card.question;
+    modeEl.innerText = showingAnswer ? "ANSWER" : "QUESTION";
 
-    progressEl.textContent = `${currentIndex + 1} / ${cards.length}`;
+    // hide explanation until requested
+    explEl.style.display = "none";
+
+    progressEl.innerText = `${currentIndex + 1} / ${cards.length}`;
 }
 
 // =======================
@@ -117,9 +119,12 @@ function flipCard() {
 
 function showExplanation() {
     if (cards.length === 0) return;
+
     const card = cards[currentIndex];
     const explEl = document.getElementById("explanation");
-    explEl.textContent = card.explanation || "No explanation provided.";
+
+    explEl.value = card.explanation || "";
+    explEl.style.display = "block";
 }
 
 // =======================
@@ -169,52 +174,36 @@ document.addEventListener("keydown", (e) => {
 
 let isEditing = false;
 
-// ----------------------
-// ENABLE EDIT MODE
-// ----------------------
 function editCard() {
     if (cards.length === 0) return;
 
-    isEditing = true;
-
-    const textEl = document.getElementById("text");
     const explEl = document.getElementById("explanation");
 
-    textEl.removeAttribute("readonly");
+    explEl.style.display = "block";
     explEl.removeAttribute("readonly");
+    explEl.focus();
 
-    textEl.focus();
+    isEditing = true;
 }
 
 // ----------------------
 // SAVE CHANGES (IN MEMORY + DOWNLOAD)
 // ----------------------
 function saveCard() {
-    if (cards.length === 0) return;
-    if (!isEditing) return;
+    if (!isEditing || cards.length === 0) return;
 
-    const textEl = document.getElementById("text");
     const explEl = document.getElementById("explanation");
-
     const card = cards[currentIndex];
 
-    if (showingAnswer) {
-        card.answer = textEl.value;
-    } else {
-        card.question = textEl.value;
-    }
-
+    // 🔥 Only thing being saved
     card.explanation = explEl.value;
 
-    // Lock fields again
-    textEl.setAttribute("readonly", true);
     explEl.setAttribute("readonly", true);
-
     isEditing = false;
 
-    alert("Card updated (download to save permanently)");
+    alert("Explanation saved (downloading file)");
 
-    downloadDeck(); // auto-download updated JSON
+    downloadDeck();
 }
 
 // ----------------------
