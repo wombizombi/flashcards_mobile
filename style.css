@@ -1,190 +1,79 @@
 body {
-    background: #f7f7f7;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    margin: 0;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 0;
 }
 
-/* Container */
 .card-container {
-    width: 100%;
-    max-width: 600px;
-
-    display: flex;
-    flex-direction: column;
-
-    height: 100dvh; /* 🔥 better than 100vh on mobile */
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Card */
 .card {
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-    flex: 1; /* fills available space */
-    min-height: 0; /* 🔥 prevents overflow issues */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1 1 auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    touch-action: pan-y;
+  width: 100%;
+  border-radius: 16px;
+  perspective: 1000px;
+  position: relative;
+  margin-bottom: 10px;
 }
 
-/* Question */
+.card-face {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  min-height: 200px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .card-front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .card-back {
+  transform: rotateY(0deg);
+}
+
 .card-text {
-    font-size: clamp(20px, 5vw, 28px);
-    font-weight: bold;
-    text-align: center;
-
-    flex: 1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-size: clamp(20px, 5vw, 28px);
+  text-align: center;
+  flex: 1;
 }
 
-/* Explanation */
-.card-explanation {
-    background: #eee;
-    padding: 12px;
-    border-radius: 10px;
-
-    max-height: 25vh;
-    overflow-y: auto;
-
-    text-align: center;
-    font-size: 16px;
-}
-
-/* Labels */
-.mode-label {
-    text-align: center;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.progress {
-    text-align: right;
-    font-size: 13px;
-    color: #888;
-}
-
-/* Buttons layout */
-.side-buttons,
-.extra-controls {
-    display: flex;
-    gap: 10px;
-    justify-content: center; 
-    margin-top: 8px;
-    flex-wrap: wrap;
-}
-
-/* Button wrapper */
-.button-with-label {
-    flex: 1 1 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Buttons */
 button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    background: #007bff;
-    color: white;
-    font-size: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 button:hover {
-    background: #007bff;
+  background: #0056b3;
 }
 
-/* Shortcut label */
-.shortcut-label {
-    font-size: 12px;
-    margin-top: 2px;
-    color: #666;
-}
-
-/* Sticky controls (like an app) */
-.extra-controls {
-    position: sticky;
-    bottom: 0;
-    background: #f7f7f7;
-    padding-bottom: 10px;
-    z-index: 10;
-}
-
-/* Temporary flash effect */
-.flash-again {
-    background-color: #f8d7da !important; /* red */
-}
-
-.flash-good {
-    background-color: #d4edda !important; /* green */
-}
-
-.flash-easy {
-    background-color: #d1ecf1 !important; /* blue */
-}
-
-/* Mobile tweaks */
-/* 🔥 MOBILE OPTIMIZATION */
-@media (max-width: 500px) {
-    .button-with-label {
-        flex: 1 1 30%; /* still 3 per row on mobile */
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .shortcut-label {
-        font-size: 11px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .card-container {
-        display: flex;
-        flex-direction: column;
-        height: 100dvh;   /* full viewport height safely on mobile */
-    }
-
-    .card {
-        flex: 1 1 auto;      /* take available space */
-        min-height: 0;       /* prevent overflow pushing buttons down */
-        margin-bottom: 10px; /* small spacing for buttons */
-    }
-
-    /* Buttons container */
-    .side-buttons, .extra-controls {
-        flex-direction: row;   /* horizontal buttons */
-        flex-wrap: wrap;       /* wrap if needed */
-        justify-content: center;
-        gap: 8px;
-        margin-top: 0;
-    }
-
-    /* Buttons */
-    button {
-        flex: 1 1 45%;        /* max 2 per row */
-        font-size: 14px;      /* slightly smaller for mobile */
-        padding: 10px;        /* smaller tap area, fits better */
-    }
-
-    /* Optional: shrink labels */
-    .shortcut-label {
-        font-size: 11px;
-        margin-top: 2px;
-    }
+.side-buttons, .extra-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
 }

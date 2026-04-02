@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flashcards</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -10,72 +10,33 @@
 <body>
 
 <div class="card-container">
-
   <div id="card" class="card">
-    <div id="mode" class="mode-label">QUESTION</div>
-    <div id="text" class="card-text"></div>
-    <div id="explanation" class="card-explanation"></div>
-    <div id="progress" class="progress"></div>
+    <div class="card-face card-front">
+      <div id="modeFront" class="mode-label">QUESTION</div>
+      <div id="textFront" class="card-text"></div>
+    </div>
+    <div class="card-face card-back">
+      <div id="modeBack" class="mode-label">ANSWER</div>
+      <div id="textBack" class="card-text"></div>
+      <div id="explanationBack" class="card-explanation"></div>
+    </div>
   </div>
 
-  <!-- Main controls -->
+  <div id="progress" class="progress"></div>
+
   <div class="side-buttons">
-    <div class="button-with-label">
-      <button onclick="prev()">⬅</button>
-      <div class="shortcut-label">←</div>
-    </div>
-    <div class="button-with-label">
-      <button onclick="flip()">Flip</button>
-      <div class="shortcut-label">Space</div>
-    </div>
-    <div class="button-with-label">
-      <button onclick="next()">➡</button>
-      <div class="shortcut-label">→</div>
-    </div>
+    <div class="button-with-label"><button onclick="prev()">⬅</button><div class="shortcut-label">←</div></div>
+    <div class="button-with-label"><button onclick="flip()">Flip</button><div class="shortcut-label">Space</div></div>
+    <div class="button-with-label"><button onclick="next()">➡</button><div class="shortcut-label">→</div></div>
   </div>
 
   <div class="extra-controls">
-  <div class="button-with-label">
-    <button id="btnAgain" onclick="markAgain()">Again</button>
-    <div class="shortcut-label">1</div>
-  </div>
-  <div class="button-with-label">
-    <button id="btnGood" onclick="markGood()">Good</button>
-    <div class="shortcut-label">2</div>
-  </div>
-  <div class="button-with-label">
-    <button id="btnEasy" onclick="markEasy()">Easy</button>
-    <div class="shortcut-label">3</div>
+    <div class="button-with-label"><button id="btnAgain" onclick="markAgain()">Again</button><div class="shortcut-label">1</div></div>
+    <div class="button-with-label"><button id="btnGood" onclick="markGood()">Good</button><div class="shortcut-label">2</div></div>
+    <div class="button-with-label"><button id="btnEasy" onclick="markEasy()">Easy</button><div class="shortcut-label">3</div></div>
   </div>
 </div>
 
-  <!-- Extra controls -->
-  <div class="extra-controls">
-    <div class="button-with-label">
-      <button onclick="randomCard()">Random</button>
-      <div class="shortcut-label">R</div>
-    </div>
-    <div class="button-with-label">
-      <button onclick="shuffleCards()">Shuffle</button>
-      <div class="shortcut-label">S</div>
-    </div>
-    <div class="button-with-label">
-      <button onclick="alphabetizeCards()">A-Z</button>
-      <div class="shortcut-label">A</div>
-    </div>
-    <div class="button-with-label">
-      <button onclick="explainCard()">Explain</button>
-      <div class="shortcut-label">E</div>
-    </div>
-    <div class="button-with-label">
-      <button onclick="document.getElementById('loadFile').click()">Load</button>
-      <div class="shortcut-label">JSON</div>
-    </div>
-  </div>
-
-</div>
-
-<!-- Hidden file input -->
 <input type="file" id="loadFile" accept=".json" style="display:none;">
 
 </body>
