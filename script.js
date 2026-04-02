@@ -167,6 +167,73 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+let isEditing = false;
+
+// ----------------------
+// ENABLE EDIT MODE
+// ----------------------
+function editCard() {
+    if (cards.length === 0) return;
+
+    isEditing = true;
+
+    const textEl = document.getElementById("text");
+    const explEl = document.getElementById("explanation");
+
+    textEl.removeAttribute("readonly");
+    explEl.removeAttribute("readonly");
+
+    textEl.focus();
+}
+
+// ----------------------
+// SAVE CHANGES (IN MEMORY + DOWNLOAD)
+// ----------------------
+function saveCard() {
+    if (cards.length === 0) return;
+    if (!isEditing) return;
+
+    const textEl = document.getElementById("text");
+    const explEl = document.getElementById("explanation");
+
+    const card = cards[currentIndex];
+
+    if (showingAnswer) {
+        card.answer = textEl.value;
+    } else {
+        card.question = textEl.value;
+    }
+
+    card.explanation = explEl.value;
+
+    // Lock fields again
+    textEl.setAttribute("readonly", true);
+    explEl.setAttribute("readonly", true);
+
+    isEditing = false;
+
+    alert("Card updated (download to save permanently)");
+
+    downloadDeck(); // auto-download updated JSON
+}
+
+// ----------------------
+// DOWNLOAD UPDATED JSON
+// ----------------------
+function downloadDeck() {
+    const dataStr = JSON.stringify(cards, null, 2);
+    const blob = new Blob([dataStr], { type: "application/json" });
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+
+    a.href = url;
+    a.download = (currentDeckName || "flashcards") + "_updated.json";
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
 // =======================
 // Initialize (empty)
 switchDeck();
