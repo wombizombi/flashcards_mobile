@@ -11,10 +11,8 @@ let isEditing = false;
 let explanationVisible = false;
 
 const decks = [
-  { name: "CompTIA Security+", file: "decks/comptia_flashcards.json" }
+  { name: "CompTIA Security+", file: "decks/sec_plus_acronymns.json" }
 ];
-
-const deckSelect = document.getElementById("deckSelect");
 
 function populateDeckDropdown() {
   deckSelect.innerHTML = "";
@@ -27,6 +25,7 @@ function populateDeckDropdown() {
   });
 }
 
+console.log("Dropdown options:", deckSelect.options);
 
 async function loadDeck(file) {
   try {
@@ -112,22 +111,25 @@ function loadDeckFromData(name, data) {
 // =======================
 
 function switchDeck() {
-  const selectedValue = document.getElementById("deckSelect").value;
+    const selectedValue = document.getElementById("deckSelect").value;
 
-  localStorage.setItem("selectedDeck", selectedValue);
+    localStorage.setItem("selectedDeck", selectedValue);
 
-  const deckObj = decks.find(d => d.file === selectedValue);
-
-  if (deckObj) {
-    // GitHub deck
-    loadDeck(deckObj.file);
-  } else {
-    // Uploaded deck
-    const uploadedDeck = decks.find(d => d.name === selectedValue);
-    if (uploadedDeck && uploadedDeck.data) {
-      loadDeckFromData(uploadedDeck.name, uploadedDeck.data);
+    // Try GitHub deck
+    let deckObj = decks.find(d => d.file === selectedValue);
+    if (deckObj) {
+        loadDeck(deckObj.file);
+        return;
     }
-  }
+
+    // Try uploaded deck
+    deckObj = decks.find(d => d.name === selectedValue);
+    if (deckObj && deckObj.data) {
+        loadDeckFromData(deckObj.name, deckObj.data);
+        return;
+    }
+
+    alert("Deck not found!");
 }
 
 // =======================
@@ -318,15 +320,48 @@ document.addEventListener("keydown", (e) => {
 // =======================
 // Initialize
 // =======================
+// =======================
+// Initialize
+// =======================
 document.addEventListener("DOMContentLoaded", () => {
-  populateDeckDropdown();
+    const deckSelect = document.getElementById("deckSelect");
 
-  const savedDeck = localStorage.getItem("selectedDeck");
+    // Populate dropdown with all decks
+    decks.forEach(deck => {
+        const option = document.createElement("option");
+        // use deck.file if it exists, else deck.name (uploaded decks)
+        option.value = deck.file || deck.name;
+        option.textContent = deck.name;
+        deckSelect.appendChild(option);
+    });
 
-  if (savedDeck) {
-    deckSelect.value = savedDeck;
-    switchDeck();
-  } else {
-    loadDeck(decks[0].file);
-  }
+    // Load last selected deck if it exists
+    const savedDeck = localStorage.getItem("selectedDeck");
+    if (savedDeck) {
+        // Try to find as GitHub deck
+        let deckObj = decks.find(d => d.file === savedDeck);
+        if (deckObj) {
+            deckSelect.value = deckObj.file;
+            loadDeck(deckObj.file);
+            return;
+        }
+
+        // Try to find as uploaded deck
+        deckObj = decks.find(d => d.name === savedDeck && d.data);
+        if (deckObj) {
+            deckSelect.value = deckObj.name;
+            loadDeckFromData(deckObj.name, deckObj.data);
+            return;
+        }
+    }
+
+    // Default: load first deck
+    if (decks.length > 0) {
+        deckSelect.value = decks[0].file || decks[0].name;
+        if (decks[0].file) {
+            loadDeck(decks[0].file);
+        } else if (decks[0].data) {
+            loadDeckFromData(decks[0].name, decks[0].data);
+        }
+    }
 });
