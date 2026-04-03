@@ -224,21 +224,30 @@ function flipCard() {
     showCard();
 }
 
-function showExplanation() {
-    if (cards.length === 0) return;
-    const card = cards[currentIndex];
-    const explEl = document.getElementById("explanation");
-    const btnEdit = document.getElementById("btnEdit");
+async function showExplanation() {
+  if (cards.length === 0) return;
 
-    explEl.value = card.explanation && card.explanation.trim() !== ""
-        ? card.explanation
-        : "No explanation available";
+  const card = cards[currentIndex];
+  const explEl = document.getElementById("explanation");
+  const btnEdit = document.getElementById("btnEdit");
 
-    explEl.style.display = "block";
+  explEl.value = card.explanation && card.explanation.trim() !== ""
+      ? card.explanation
+      : "Loading AI explanation...";
 
-    explanationVisible = true;
-    btnEdit.disabled = false;
-    document.getElementById("btnUpdate").disabled = true;
+  explEl.style.display = "block";
+  explanationVisible = true;
+  btnEdit.disabled = false;
+  document.getElementById("btnUpdate").disabled = true;
+
+  // Fetch AI explanation if not already saved
+  if (!card.explanation || card.explanation.trim() === "") {
+    const aiExpl = await fetchAIExplanation(card.question);
+    card.explanation = aiExpl;
+    explEl.value = aiExpl;
+    // Save locally
+    localStorage.setItem(currentDeckName, JSON.stringify(cards));
+  }
 }
 
 // =======================
@@ -335,9 +344,27 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-// =======================
-// Initialize
-// =======================
+
+
+// Call the Vercel backend to get AI explanation
+async function fetchAIExplanation(question) {
+  try {
+    const res = await fetch("https://flashcards-mobile-rleawn91b-wombizombis-projects.vercel.app/api/ai", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question }),
+    });
+
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+
+    return data.explanation;
+  } catch (err) {
+    console.error("AI request failed:", err);
+    return "AI explanation unavailable";
+  }
+}
+
 // =======================
 // Initialize
 // =======================
