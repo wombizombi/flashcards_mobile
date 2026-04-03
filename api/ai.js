@@ -1,21 +1,20 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // ✅ keep secret in Vercel env
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 export default async function handler(req, res) {
-  // ---- CORS headers ----
-  res.setHeader("Access-Control-Allow-Origin", "https://wombizombi.github.io"); // your GitHub Pages URL
+  // --- Always set CORS headers first ---
+  res.setHeader("Access-Control-Allow-Origin", "https://wombizombi.github.io"); // GitHub Pages URL
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   // Handle preflight OPTIONS request
   if (req.method === "OPTIONS") {
-    return res.status(200).end();
+    return res.status(204).end();
   }
 
-  // Only allow POST
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
