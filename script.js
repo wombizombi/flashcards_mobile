@@ -113,23 +113,31 @@ function loadDeckFromData(name, data) {
 function switchDeck() {
     const selectedValue = document.getElementById("deckSelect").value;
 
+    // Save selected deck for next visit
     localStorage.setItem("selectedDeck", selectedValue);
 
-    // Try GitHub deck
+    // Try to find GitHub deck by file
     let deckObj = decks.find(d => d.file === selectedValue);
     if (deckObj) {
         loadDeck(deckObj.file);
         return;
     }
 
-    // Try uploaded deck
-    deckObj = decks.find(d => d.name === selectedValue);
-    if (deckObj && deckObj.data) {
+    // Try to find uploaded deck by name
+    deckObj = decks.find(d => d.name === selectedValue && d.data);
+    if (deckObj) {
         loadDeckFromData(deckObj.name, deckObj.data);
         return;
     }
 
-    alert("Deck not found!");
+    // If not found, fallback to first deck
+    if (decks.length > 0) {
+        if (decks[0].file) {
+            loadDeck(decks[0].file);
+        } else if (decks[0].data) {
+            loadDeckFromData(decks[0].name, decks[0].data);
+        }
+    }
 }
 
 // =======================
