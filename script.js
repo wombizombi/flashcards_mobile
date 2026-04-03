@@ -15,16 +15,26 @@ const decks = [
 ];
 
 function populateDeckDropdown() {
-  deckSelect.innerHTML = "";
+    const deckSelect = document.getElementById("deckSelect");
+    deckSelect.innerHTML = "";
 
-  decks.forEach((deck) => {
-    const option = document.createElement("option");
-    option.value = deck.file;
-    option.textContent = deck.name;
-    deckSelect.appendChild(option);
-  });
+    decks.forEach(deck => {
+        const option = document.createElement("option");
+        // GitHub deck → value is file path; uploaded deck → value is name
+        option.value = deck.file || deck.name;
+        option.textContent = deck.name;
+        deckSelect.appendChild(option);
+    });
+
+    // Select last saved deck if available
+    const savedDeck = localStorage.getItem("selectedDeck");
+    if (savedDeck) {
+        deckSelect.value = savedDeck;
+    } else if (decks.length > 0) {
+        // default to first deck
+        deckSelect.value = decks[0].file || decks[0].name;
+    }
 }
-
 console.log("Dropdown options:", deckSelect.options);
 
 async function loadDeck(file) {
