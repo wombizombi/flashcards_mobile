@@ -70,14 +70,12 @@ body {
 }
 
 .card-explanation {
-    background: #eee;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 16px;
-    text-align: center;
-    width: 100%;
-    display: none; /* hidden by default */
-    margin-bottom: 10px;
+    width: 100%;       /* full width */
+    height: 200px;     /* bigger box */
+    font-size: 16px;   /* optional, easier to read */
+    line-height: 1.4;  /* optional, makes text less cramped */
+    padding: 8px;      /* optional, adds inner space */
+    resize: vertical;  /* allows vertical resizing if you want */
 }
 
 /* =======================
