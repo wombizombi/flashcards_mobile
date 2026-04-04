@@ -50,9 +50,9 @@ async function loadDeck(file) {
     currentDeckName = deckObj ? deckObj.name : "default";
 
     // check localStorage override
-    const saved = localStorage.getItem(currentDeckName);
-    if (saved) {
-  const savedCards = JSON.parse(saved);
+    // const saved = localStorage.getItem(currentDeckName);
+    // if (saved) {
+    // const savedCards = JSON.parse(saved);
 
   // Merge explanations into fresh deck
   cards = cards.map((card, i) => ({
@@ -365,7 +365,7 @@ document.addEventListener("keydown", (e) => {
 document.addEventListener("DOMContentLoaded", () => {
     // Clear old saved deck just this once
     localStorage.removeItem("CompTIA Security+");
-    
+
     populateDeckDropdown();
 
     const deckSelect = document.getElementById("deckSelect");
