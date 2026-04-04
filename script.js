@@ -363,6 +363,9 @@ document.addEventListener("keydown", (e) => {
 // Initialize
 // =======================
 document.addEventListener("DOMContentLoaded", () => {
+    // Clear old saved deck just this once
+    localStorage.removeItem("CompTIA Security+");
+    
     populateDeckDropdown();
 
     const deckSelect = document.getElementById("deckSelect");
