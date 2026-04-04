@@ -11,7 +11,7 @@ let isEditing = false;
 let explanationVisible = false;
 
 const decks = [
-  { name: "CompTIA Security+", file: "decks/sec_plus_acronymns.json" }
+  { name: "CompTIA Security+", file: "decks/sec_plus.json" }
 ];
 
 function populateDeckDropdown() {
@@ -35,6 +35,7 @@ function populateDeckDropdown() {
         deckSelect.value = decks[0].file || decks[0].name;
     }
 }
+const deckSelect = document.getElementById("deckSelect");
 console.log("Dropdown options:", deckSelect.options);
 
 async function loadDeck(file) {
@@ -180,7 +181,7 @@ function showCard() {
     // Reset explanation UI
     explEl.style.display = "none";
     explEl.setAttribute("readonly", true);
-    explEl.value = "";
+    explEl.value = cards[currentIndex].explanation || "";
 
     explanationVisible = false;
     isEditing = false;
@@ -224,30 +225,25 @@ function flipCard() {
     showCard();
 }
 
-async function showExplanation() {
+function showExplanation() {
   if (cards.length === 0) return;
 
   const card = cards[currentIndex];
   const explEl = document.getElementById("explanation");
   const btnEdit = document.getElementById("btnEdit");
 
-  explEl.value = card.explanation && card.explanation.trim() !== ""
-      ? card.explanation
-      : "Loading AI explanation...";
+  // ✅ Pull directly from JSON
+  if (card.explanation && card.explanation.trim() !== "") {
+    explEl.value = card.explanation;
+  } else {
+    explEl.value = "No explanation available";
+  }
 
   explEl.style.display = "block";
   explanationVisible = true;
+
   btnEdit.disabled = false;
   document.getElementById("btnUpdate").disabled = true;
-
-  // Fetch AI explanation if not already saved
-  if (!card.explanation || card.explanation.trim() === "") {
-    const aiExpl = await fetchAIExplanation(card.question);
-    card.explanation = aiExpl;
-    explEl.value = aiExpl;
-    // Save locally
-    localStorage.setItem(currentDeckName, JSON.stringify(cards));
-  }
 }
 
 // =======================
@@ -288,23 +284,35 @@ function updateCard() {
 function saveCard() {
     if (cards.length === 0) return;
 
-    // Make sure latest explanation is saved in memory
     const card = cards[currentIndex];
     const explEl = document.getElementById("explanation");
-    if (explanationVisible && explEl.value.trim() !== "") {
+
+    if (explEl.value.trim() !== "") {
         card.explanation = explEl.value;
     }
 
-    // Download JSON
+    // ✅ Save to localStorage ONLY
+    localStorage.setItem(currentDeckName, JSON.stringify(cards));
+
+    alert("Card saved locally!");
+}
+
+function downloadDeck() {
+    if (cards.length === 0) return;
+
     const dataStr = JSON.stringify(cards, null, 2);
     const blob = new Blob([dataStr], { type: "application/json" });
+
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
+
     a.href = url;
     a.download = (currentDeckName || "flashcards") + "_updated.json";
+
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+
     URL.revokeObjectURL(url);
 }
 
@@ -345,68 +353,21 @@ document.addEventListener("keydown", (e) => {
 });
 
 
-
-// Call the Vercel backend to get AI explanation
-async function fetchAIExplanation(question) {
-  try {
-    const res = await fetch("https://flashcards-mobile-rleawn91b-wombizombis-projects.vercel.app/api/ai", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question }),
-    });
-
-    const data = await res.json();
-    if (data.error) throw new Error(data.error);
-
-    return data.explanation;
-  } catch (err) {
-    console.error("AI request failed:", err);
-    return "AI explanation unavailable";
-  }
-}
-
 // =======================
 // Initialize
 // =======================
 document.addEventListener("DOMContentLoaded", () => {
+    populateDeckDropdown();
+
     const deckSelect = document.getElementById("deckSelect");
 
-    // Populate dropdown with all decks
-    decks.forEach(deck => {
-        const option = document.createElement("option");
-        // use deck.file if it exists, else deck.name (uploaded decks)
-        option.value = deck.file || deck.name;
-        option.textContent = deck.name;
-        deckSelect.appendChild(option);
-    });
-
-    // Load last selected deck if it exists
     const savedDeck = localStorage.getItem("selectedDeck");
+
     if (savedDeck) {
-        // Try to find as GitHub deck
-        let deckObj = decks.find(d => d.file === savedDeck);
-        if (deckObj) {
-            deckSelect.value = deckObj.file;
-            loadDeck(deckObj.file);
-            return;
-        }
-
-        // Try to find as uploaded deck
-        deckObj = decks.find(d => d.name === savedDeck && d.data);
-        if (deckObj) {
-            deckSelect.value = deckObj.name;
-            loadDeckFromData(deckObj.name, deckObj.data);
-            return;
-        }
-    }
-
-    // Default: load first deck
-    if (decks.length > 0) {
+        deckSelect.value = savedDeck;
+        switchDeck();
+    } else if (decks.length > 0) {
         deckSelect.value = decks[0].file || decks[0].name;
-        if (decks[0].file) {
-            loadDeck(decks[0].file);
-        } else if (decks[0].data) {
-            loadDeckFromData(decks[0].name, decks[0].data);
-        }
+        switchDeck();
     }
 });
