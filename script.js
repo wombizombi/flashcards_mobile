@@ -43,28 +43,14 @@ async function loadDeck(file) {
     const response = await fetch(file);
     const data = await response.json();
 
+    // Use JSON from file
     cards = data;
 
-    // set deck name based on file
-    const deckObj = decks.find(d => d.file === file);
-    currentDeckName = deckObj ? deckObj.name : "default";
-
-    // check localStorage override
-    // const saved = localStorage.getItem(currentDeckName);
-    // if (saved) {
-    // const savedCards = JSON.parse(saved);
-
-  // Merge explanations into fresh deck
-  cards = cards.map((card, i) => ({
-    ...card,
-    explanation: savedCards[i]?.explanation || card.explanation
-  }));
-}
-
+    // Reset state
     currentIndex = 0;
     showingAnswer = false;
 
-    showCard();
+    showCard(); // display the first card
   } catch (err) {
     console.error("Error loading deck:", err);
   }
