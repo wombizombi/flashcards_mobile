@@ -52,8 +52,14 @@ async function loadDeck(file) {
     // check localStorage override
     const saved = localStorage.getItem(currentDeckName);
     if (saved) {
-      cards = JSON.parse(saved);
-    }
+  const savedCards = JSON.parse(saved);
+
+  // Merge explanations into fresh deck
+  cards = cards.map((card, i) => ({
+    ...card,
+    explanation: savedCards[i]?.explanation || card.explanation
+  }));
+}
 
     currentIndex = 0;
     showingAnswer = false;
