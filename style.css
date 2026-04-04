@@ -71,7 +71,7 @@ body {
 
 .card-explanation {
     width: 100%;       /* full width */
-    height: 150px;     /* bigger box */
+    height: 120px;     /* bigger box */
     font-size: 16px;   /* optional, easier to read */
     line-height: 1.4;  /* optional, makes text less cramped */
     padding: 8px;      /* optional, adds inner space */
