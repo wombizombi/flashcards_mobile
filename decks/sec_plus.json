@@ -1,0 +1,1637 @@
+[
+  {
+    "question": "AAA",
+    "answer": "Authentication, Authorization, and Accounting",
+    "explanation": "A framework for controlling access to computer resources, verifying user identities, granting permissions, and tracking usage."
+  },
+  {
+    "question": "ACL",
+    "answer": "Access Control List",
+    "explanation": "A list that defines which users or system processes are granted access to objects, as well as what operations are allowed on given objects."
+  },
+  {
+    "question": "AES",
+    "answer": "Advanced Encryption Standard",
+    "explanation": "A symmetric encryption algorithm widely used across the globe to secure data."
+  },
+  {
+    "question": "AES-256",
+    "answer": "Advanced Encryption Standard 256-bit",
+    "explanation": "AES encryption using a 256-bit key, offering a higher level of security than standard AES."
+  },
+  {
+    "question": "AH",
+    "answer": "Authentication Header",
+    "explanation": "A protocol that provides connectionless integrity, data origin authentication, and optional anti-replay protection for IP packets."
+  },
+  {
+    "question": "AI",
+    "answer": "Artificial Intelligence",
+    "explanation": "The simulation of human intelligence in machines that are programmed to think, learn, and make decisions."
+  },
+  {
+    "question": "AIS",
+    "answer": "Automated Indicator Sharing",
+    "explanation": "A system for sharing cyber threat indicators automatically between organizations to improve collective security."
+  },
+  {
+    "question": "ALE",
+    "answer": "Annualized Loss Expectancy",
+    "explanation": "A measure used in risk management to estimate the potential monetary loss from a threat over a year."
+  },
+  {
+    "question": "AP",
+    "answer": "Access Point",
+    "explanation": "A device that allows wireless devices to connect to a wired network using Wi-Fi."
+  },
+  {
+    "question": "API",
+    "answer": "Application Programming Interface",
+    "explanation": "A set of rules and protocols that allows different software applications to communicate with each other."
+  },
+  {
+    "question": "APT",
+    "answer": "Advanced Persistent Threat",
+    "explanation": "A prolonged and targeted cyberattack in which an intruder gains access to a network and remains undetected for an extended period."
+  },
+  {
+    "question": "ARO",
+    "answer": "Annualized Rate of Occurrence",
+    "explanation": "The expected frequency that a specific threat will occur within a year."
+  },
+  {
+    "question": "ARP",
+    "answer": "Address Resolution Protocol",
+    "explanation": "A network protocol used to find the hardware address (MAC) of a host from its IP address."
+  },
+  {
+    "question": "ASLR",
+    "answer": "Address Space Layout Randomization",
+    "explanation": "A security technique that randomizes the memory addresses used by system and application processes to prevent exploitation."
+  },
+  {
+    "question": "ATT&CK",
+    "answer": "Adversarial Tactics, Techniques, and Common Knowledge",
+    "explanation": "A knowledge base of cyberattack techniques and tactics used by adversaries, maintained by MITRE."
+  },
+  {
+    "question": "AUP",
+    "answer": "Acceptable Use Policy",
+    "explanation": "A set of rules and guidelines that define acceptable behavior for users of an organization's network and resources."
+  },
+  {
+    "question": "AV",
+    "answer": "Antivirus",
+    "explanation": "Software designed to detect, prevent, and remove malware from computers and networks."
+  },
+  {
+    "question": "BASH",
+    "answer": "Bourne Again Shell",
+    "explanation": "A Unix shell and command language used for scripting and command-line interface tasks."
+  },
+  {
+    "question": "BCP",
+    "answer": "Business Continuity Planning",
+    "explanation": "A strategy to ensure that critical business functions continue during and after a disaster or disruption."
+  },
+  {
+    "question": "BGP",
+    "answer": "Border Gateway Protocol",
+    "explanation": "A protocol that manages how packets are routed across the internet through the exchange of routing information between autonomous systems."
+  },
+  {
+    "question": "BIA",
+    "answer": "Business Impact Analysis",
+    "explanation": "A process to evaluate the effects of disruptions on business operations and prioritize recovery efforts."
+  },
+  {
+    "question": "BIOS",
+    "answer": "Basic Input/Output System",
+    "explanation": "Firmware that initializes and tests hardware during startup and provides runtime services for operating systems and programs."
+  },
+  {
+    "question": "BPA",
+    "answer": "Business Partners Agreement",
+    "explanation": "A contract between organizations outlining shared responsibilities, roles, and expectations for collaboration."
+  },
+  {
+    "question": "BPDU",
+    "answer": "Bridge Protocol Data Unit",
+    "explanation": "A type of network message exchanged by switches to detect loops and maintain the Spanning Tree Protocol topology."
+  },
+  {
+    "question": "BYOD",
+    "answer": "Bring Your Own Device",
+    "explanation": "A policy allowing employees to use their personal devices for work purposes, which requires security controls to protect corporate data."
+  },
+  {
+    "question": "CA",
+    "answer": "Certificate Authority",
+    "explanation": "An entity that issues digital certificates to verify identities and enable secure communications."
+  },
+  {
+    "question": "CAPTCHA",
+    "answer": "Completely Automated Public Turing Test to Tell Computers and Humans Apart",
+    "explanation": "A challenge-response test used to determine whether the user is human and prevent automated abuse of services."
+  },
+  {
+    "question": "CAR",
+    "answer": "Corrective Action Report",
+    "explanation": "A report documenting steps taken to address and correct identified issues or incidents."
+  },
+  {
+    "question": "CASB",
+    "answer": "Cloud Access Security Broker",
+    "explanation": "A security policy enforcement point placed between cloud users and cloud services to monitor activity and enforce policies."
+  },
+  {
+    "question": "CBC",
+    "answer": "Cipher Block Chaining",
+    "explanation": "A mode of operation for block ciphers that links ciphertext blocks together to improve encryption security."
+  },
+  {
+    "question": "CCMP",
+    "answer": "Counter Mode/CBC-MAC Protocol",
+    "explanation": "An encryption protocol used in WPA2 to provide confidentiality, integrity, and authentication of wireless data."
+  },
+  {
+    "question": "CCTV",
+    "answer": "Closed-circuit Television",
+    "explanation": "A video surveillance system used to monitor and record activities within a specific area."
+  },
+  {
+    "question": "CERT",
+    "answer": "Computer Emergency Response Team",
+    "explanation": "A group of cybersecurity experts who respond to and manage computer security incidents."
+  },
+  {
+    "question": "CFB",
+    "answer": "Cipher Feedback",
+    "explanation": "A block cipher mode that allows encryption of data in units smaller than the block size, often used for streaming data."
+  },
+  {
+    "question": "CHAP",
+    "answer": "Challenge Handshake Authentication Protocol",
+    "explanation": "An authentication protocol that uses a three-way handshake to verify user identity without sending a password in cleartext."
+  },
+  {
+    "question": "CIA",
+    "answer": "Confidentiality, Integrity, Availability",
+    "explanation": "The foundational principles of information security ensuring data is protected, accurate, and accessible when needed."
+  },
+  {
+    "question": "CIO",
+    "answer": "Chief Information Officer",
+    "explanation": "The executive responsible for managing and implementing information and computer technologies in an organization."
+  },
+  {
+    "question": "CIRT",
+    "answer": "Computer Incident Response Team",
+    "explanation": "A team responsible for detecting, analyzing, and responding to cybersecurity incidents."
+  },
+  {
+    "question": "CMS",
+    "answer": "Content Management System",
+    "explanation": "Software that allows users to create, manage, and modify content on a website without needing specialized technical knowledge."
+  },
+  {
+    "question": "COOP",
+    "answer": "Continuity of Operation Planning",
+    "explanation": "Planning to ensure that essential functions continue during and after a disaster or disruption."
+  },
+  {
+    "question": "COPE",
+    "answer": "Corporate Owned, Personally Enabled",
+    "explanation": "A policy where the organization provides devices to employees but allows limited personal use, balancing control and flexibility."
+  },
+  {
+    "question": "CP",
+    "answer": "Contingency Planning",
+    "explanation": "Planning for emergency response, backup operations, and post-disaster recovery to minimize impact."
+  },
+  {
+    "question": "CRC",
+    "answer": "Cyclical Redundancy Check",
+    "explanation": "An error-detecting code used to verify the integrity of data transmissions or storage."
+  },
+  {
+    "question": "CRL",
+    "answer": "Certificate Revocation List",
+    "explanation": "A list of digital certificates that have been revoked and should no longer be trusted."
+  },
+  {
+    "question": "CSO",
+    "answer": "Chief Security Officer",
+    "explanation": "An executive responsible for overseeing an organization’s physical and information security programs."
+  },
+  {
+    "question": "CSP",
+    "answer": "Cloud Service Provider",
+    "explanation": "A company that offers computing services such as storage, networking, and applications via the cloud."
+  },
+  {
+    "question": "CSR",
+    "answer": "Certificate Signing Request",
+    "explanation": "A request sent to a certificate authority to obtain a digital certificate."
+  },
+  {
+    "question": "CSRF",
+    "answer": "Cross-site Request Forgery",
+    "explanation": "A web security attack that tricks a user into executing unwanted actions on a web application in which they are authenticated."
+  },
+  {
+    "question": "CSU",
+    "answer": "Channel Service Unit",
+    "explanation": "A device used to connect a digital line (like T1) to a router, managing signal timing and transmission."
+  },
+  {
+    "question": "CTM",
+    "answer": "Counter Mode",
+    "explanation": "A block cipher mode that turns a block cipher into a stream cipher, encrypting data by combining plaintext with a counter."
+  },
+  {
+    "question": "CTO",
+    "answer": "Chief Technology Officer",
+    "explanation": "The executive responsible for an organization’s technology strategy and implementation."
+  },
+  {
+    "question": "CVE",
+    "answer": "Common Vulnerability Enumeration",
+    "explanation": "A list of publicly known cybersecurity vulnerabilities and exposures."
+  },
+  {
+    "question": "CVSS",
+    "answer": "Common Vulnerability Scoring System",
+    "explanation": "A standardized system for rating the severity of security vulnerabilities."
+  },
+  {
+    "question": "CYOD",
+    "answer": "Choose Your Own Device",
+    "explanation": "A policy allowing employees to select a device from a list of approved company options for work use."
+  },
+  {
+    "question": "DAC",
+    "answer": "Discretionary Access Control",
+    "explanation": "A type of access control where the owner of a resource determines who is allowed to access it."
+  },
+  {
+    "question": "DBA",
+    "answer": "Database Administrator",
+    "explanation": "A professional responsible for managing and maintaining databases, ensuring availability, integrity, and security."
+  },
+  {
+    "question": "DDoS",
+    "answer": "Distributed Denial of Service",
+    "explanation": "An attack in which multiple systems flood the bandwidth or resources of a targeted system, making it unavailable."
+  },
+  {
+    "question": "DEP",
+    "answer": "Data Execution Prevention",
+    "explanation": "A security feature that prevents code from executing in memory regions that should only contain data, protecting against certain exploits."
+  },
+  {
+    "question": "DES",
+    "answer": "Digital Encryption Standard",
+    "explanation": "A symmetric-key encryption algorithm formerly used for securing electronic data, now largely replaced by AES."
+  },
+  {
+    "question": "DHCP",
+    "answer": "Dynamic Host Configuration Protocol",
+    "explanation": "A network protocol that automatically assigns IP addresses and other configuration information to devices on a network."
+  },
+  {
+    "question": "DHE",
+    "answer": "Diffie-Hellman Ephemeral",
+    "explanation": "A variation of the Diffie-Hellman key exchange that generates temporary session keys for secure communications."
+  },
+  {
+    "question": "DKIM",
+    "answer": "DomainKeys Identified Mail",
+    "explanation": "An email authentication method that allows the receiver to check that an email claimed to have come from a domain was indeed authorized by the domain owner."
+  },
+  {
+    "question": "DLL",
+    "answer": "Dynamic Link Library",
+    "explanation": "A file containing code and data that can be used by multiple programs simultaneously in Windows systems."
+  },
+  {
+    "question": "DLP",
+    "answer": "Data Loss Prevention",
+    "explanation": "A strategy and set of tools used to prevent sensitive data from being lost, leaked, or accessed by unauthorized users."
+  },
+  {
+    "question": "DMARC",
+    "answer": "Domain-based Message Authentication, Reporting, and Conformance",
+    "explanation": "An email authentication protocol that builds on SPF and DKIM to prevent email spoofing."
+  },
+  {
+    "question": "DNAT",
+    "answer": "Destination Network Address Translation",
+    "explanation": "A technique that changes the destination IP address of incoming packets to direct traffic to an internal network address."
+  },
+  {
+    "question": "DNS",
+    "answer": "Domain Name System",
+    "explanation": "A system that translates human-readable domain names into IP addresses that computers use to identify each other on the network."
+  },
+  {
+    "question": "DoS",
+    "answer": "Denial of Service",
+    "explanation": "An attack that makes a system, service, or network unavailable to its intended users, typically by overwhelming it with traffic."
+  },
+  {
+    "question": "DPO",
+    "answer": "Data Privacy Officer",
+    "explanation": "A professional responsible for overseeing an organization's data protection strategy and ensuring compliance with privacy regulations."
+  },
+  {
+    "question": "DRP",
+    "answer": "Disaster Recovery Plan",
+    "explanation": "A documented, structured approach detailing how an organization can quickly resume critical operations after a disaster."
+  },
+  {
+    "question": "DSA",
+    "answer": "Digital Signature Algorithm",
+    "explanation": "A standard for digital signatures that ensures the authenticity and integrity of a message or document."
+  },
+  {
+    "question": "DSL",
+    "answer": "Digital Subscriber Line",
+    "explanation": "A technology for high-speed internet access over standard telephone lines."
+  },
+  {
+    "question": "EAP",
+    "answer": "Extensible Authentication Protocol",
+    "explanation": "A flexible authentication framework frequently used in network and wireless security, supporting multiple authentication methods."
+  },
+  {
+    "question": "ECB",
+    "answer": "Electronic Code Book",
+    "explanation": "A simple block cipher mode where each block of plaintext is encrypted independently, which can reveal patterns in the data."
+  },
+  {
+    "question": "ECC",
+    "answer": "Elliptic Curve Cryptography",
+    "explanation": "A public-key cryptography approach using elliptic curves to provide strong security with smaller keys compared to RSA."
+  },
+  {
+    "question": "ECDHE",
+    "answer": "Elliptic Curve Diffie-Hellman Ephemeral",
+    "explanation": "A key exchange protocol that uses elliptic curves to provide perfect forward secrecy by generating temporary session keys."
+  },
+  {
+    "question": "ECDSA",
+    "answer": "Elliptic Curve Digital Signature Algorithm",
+    "explanation": "A digital signature algorithm that uses elliptic curve cryptography to provide secure authentication and integrity verification."
+  },
+  {
+    "question": "EDR",
+    "answer": "Endpoint Detection and Response",
+    "explanation": "A cybersecurity solution that monitors and responds to threats on endpoints like laptops and servers."
+  },
+  {
+    "question": "EFS",
+    "answer": "Encrypted File System",
+    "explanation": "A Windows feature that provides file-level encryption to protect sensitive data stored on disk."
+  },
+  {
+    "question": "ERP",
+    "answer": "Enterprise Resource Planning",
+    "explanation": "A type of software used by organizations to manage and integrate key business processes across departments."
+  },
+  {
+    "question": "ESN",
+    "answer": "Electronic Serial Number",
+    "explanation": "A unique identifier assigned to mobile devices for network identification purposes."
+  },
+  {
+    "question": "ESP",
+    "answer": "Encapsulated Security Payload",
+    "explanation": "A protocol within IPsec that provides confidentiality, integrity, and authentication for IP packets."
+  },
+  {
+    "question": "FACL",
+    "answer": "File System Access Control List",
+    "explanation": "A list associated with files or directories that defines which users or system processes can access them and with what permissions."
+  },
+  {
+    "question": "FDE",
+    "answer": "Full Disk Encryption",
+    "explanation": "A security measure that encrypts all data on a storage device to protect it from unauthorized access."
+  },
+  {
+    "question": "FIM",
+    "answer": "File Integrity Management",
+    "explanation": "A process that monitors and verifies the integrity of system and application files to detect unauthorized changes."
+  },
+  {
+    "question": "FPGA",
+    "answer": "Field Programmable Gate Array",
+    "explanation": "A type of hardware that can be programmed after manufacturing to perform custom logic functions."
+  },
+  {
+    "question": "FRR",
+    "answer": "False Rejection Rate",
+    "explanation": "A metric in biometric systems that measures how often legitimate users are incorrectly denied access."
+  },
+  {
+    "question": "FTP",
+    "answer": "File Transfer Protocol",
+    "explanation": "A standard network protocol used to transfer files between client and server over a network."
+  },
+  {
+    "question": "FTPS",
+    "answer": "Secured File Transfer Protocol",
+    "explanation": "An extension of FTP that adds support for TLS/SSL encryption to secure file transfers."
+  },
+  {
+    "question": "GCM",
+    "answer": "Galois Counter Mode",
+    "explanation": "An encryption mode that provides both confidentiality and data integrity, often used with AES."
+  },
+  {
+    "question": "GDPR",
+    "answer": "General Data Protection Regulation",
+    "explanation": "A European Union regulation that sets guidelines for the collection, storage, and processing of personal data."
+  },
+  {
+    "question": "GPG",
+    "answer": "Gnu Privacy Guard",
+    "explanation": "A free implementation of the OpenPGP standard for encrypting and signing data and communications."
+  },
+  {
+    "question": "GPO",
+    "answer": "Group Policy Object",
+    "explanation": "A set of rules in Windows environments that control user and computer configurations across a network."
+  },
+  {
+    "question": "GPS",
+    "answer": "Global Positioning System",
+    "explanation": "A satellite-based navigation system used to determine precise location and time information."
+  },
+  {
+    "question": "GPU",
+    "answer": "Graphics Processing Unit",
+    "explanation": "A specialized processor designed to accelerate graphics rendering and parallel computations."
+  },
+  {
+    "question": "GRE",
+    "answer": "Generic Routing Encapsulation",
+    "explanation": "A tunneling protocol that encapsulates packets for transmission over an IP network."
+  },
+  {
+    "question": "HA",
+    "answer": "High Availability",
+    "explanation": "A system design approach that ensures a service or application remains operational with minimal downtime."
+  },
+  {
+    "question": "HDD",
+    "answer": "Hard Disk Drive",
+    "explanation": "A traditional storage device that uses spinning disks to store and retrieve digital data."
+  },
+  {
+    "question": "HIDS",
+    "answer": "Host-based Intrusion Detection System",
+    "explanation": "A security system installed on a host to monitor and detect suspicious activities or policy violations."
+  },
+  {
+    "question": "HIPS",
+    "answer": "Host-based Intrusion Prevention System",
+    "explanation": "A security system on a host that can actively prevent, block, or respond to detected threats."
+  },
+  {
+    "question": "HMAC",
+    "answer": "Hashed Message Authentication Code",
+    "explanation": "A mechanism for verifying data integrity and authenticity using a cryptographic hash function and a secret key."
+  },
+  {
+    "question": "HOTP",
+    "answer": "HMAC-based One-time Password",
+    "explanation": "A one-time password generation algorithm that combines HMAC with a counter to produce a temporary password."
+  },
+  {
+    "question": "HSM",
+    "answer": "Hardware Security Module",
+    "explanation": "A physical device that manages digital keys and performs cryptographic operations securely."
+  },
+  {
+    "question": "HTML",
+    "answer": "Hypertext Markup Language",
+    "explanation": "The standard language used to create and structure content on the web."
+  },
+  {
+    "question": "HTTP",
+    "answer": "Hypertext Transfer Protocol",
+    "explanation": "The protocol used for transferring web pages and other resources over the internet."
+  },
+  {
+    "question": "HTTPS",
+    "answer": "Hypertext Transfer Protocol Secure",
+    "explanation": "An extension of HTTP that uses encryption via TLS/SSL to secure data transmitted between client and server."
+  },
+  {
+    "question": "HVAC",
+    "answer": "Heating, Ventilation, Air Conditioning",
+    "explanation": "Systems that regulate environmental comfort and air quality within buildings, also relevant for data center security and cooling."
+  },
+  {
+    "question": "IaaS",
+    "answer": "Infrastructure as a Service",
+    "explanation": "A cloud computing model that provides virtualized computing resources such as servers, storage, and networking over the internet."
+  },
+  {
+    "question": "IaC",
+    "answer": "Infrastructure as Code",
+    "explanation": "The practice of managing and provisioning infrastructure through code and automation instead of manual processes."
+  },
+  {
+    "question": "IAM",
+    "answer": "Identity and Access Management",
+    "explanation": "A framework of policies and technologies for ensuring the right users have appropriate access to resources."
+  },
+  {
+    "question": "ICMP",
+    "answer": "Internet Control Message Protocol",
+    "explanation": "A network protocol used for error reporting and diagnostic functions, such as ping."
+  },
+  {
+    "question": "ICS",
+    "answer": "Industrial Control Systems",
+    "explanation": "Systems used to control industrial processes, including SCADA systems and distributed control systems."
+  },
+  {
+    "question": "IDEA",
+    "answer": "International Data Encryption Algorithm",
+    "explanation": "A symmetric encryption algorithm used to secure data through block cipher encryption."
+  },
+  {
+    "question": "IDF",
+    "answer": "Intermediate Distribution Frame",
+    "explanation": "A network distribution point that connects end-user devices to the main distribution frame."
+  },
+  {
+    "question": "IdP",
+    "answer": "Identity Provider",
+    "explanation": "A service that stores and manages digital identities and authenticates users for access to systems."
+  },
+  {
+    "question": "IDS",
+    "answer": "Intrusion Detection System",
+    "explanation": "A system that monitors network or system activities for malicious actions or policy violations."
+  },
+  {
+    "question": "IEEE",
+    "answer": "Institute of Electrical and Electronics Engineers",
+    "explanation": "A professional organization that develops technology standards, including networking standards like 802.11."
+  },
+  {
+    "question": "IKE",
+    "answer": "Internet Key Exchange",
+    "explanation": "A protocol used to set up secure, authenticated communication channels in IPsec."
+  },
+  {
+    "question": "IM",
+    "answer": "Instant Messaging",
+    "explanation": "Real-time text communication between users over a network."
+  },
+  {
+    "question": "IMAP",
+    "answer": "Internet Message Access Protocol",
+    "explanation": "An email protocol that allows users to access and manage email directly on a mail server."
+  },
+  {
+    "question": "IoC",
+    "answer": "Indicators of Compromise",
+    "explanation": "Evidence or artifacts that suggest a system has been breached or compromised."
+  },
+  {
+    "question": "IoT",
+    "answer": "Internet of Things",
+    "explanation": "A network of interconnected physical devices that collect and exchange data."
+  },
+  {
+    "question": "IP",
+    "answer": "Internet Protocol",
+    "explanation": "The primary protocol for sending data across networks, responsible for addressing and routing packets."
+  },
+  {
+    "question": "IPS",
+    "answer": "Intrusion Prevention System",
+    "explanation": "A security system that monitors network traffic and actively blocks detected threats."
+  },
+  {
+    "question": "IPSec",
+    "answer": "Internet Protocol Security",
+    "explanation": "A suite of protocols used to secure IP communications through encryption and authentication."
+  },
+  {
+    "question": "IR",
+    "answer": "Incident Response",
+    "explanation": "The process of identifying, managing, and mitigating cybersecurity incidents."
+  },
+  {
+    "question": "IRC",
+    "answer": "Internet Relay Chat",
+    "explanation": "A protocol for real-time text communication over the internet, often used in group discussions."
+  },
+  {
+    "question": "IRP",
+    "answer": "Incident Response Plan",
+    "explanation": "A documented plan outlining procedures for detecting, responding to, and recovering from incidents."
+  },
+  {
+    "question": "ISO",
+    "answer": "International Standards Organization",
+    "explanation": "An organization that develops and publishes international standards, including those for information security."
+  },
+  {
+    "question": "ISP",
+    "answer": "Internet Service Provider",
+    "explanation": "A company that provides individuals and organizations access to the internet."
+  },
+  {
+    "question": "ISSO",
+    "answer": "Information Systems Security Officer",
+    "explanation": "A role responsible for maintaining and enforcing an organization’s information security policies."
+  },
+  {
+    "question": "IV",
+    "answer": "Initialization Vector",
+    "explanation": "A random or pseudo-random value used with encryption algorithms to ensure unique ciphertext outputs."
+  },
+  {
+    "question": "KDC",
+    "answer": "Key Distribution Center",
+    "explanation": "A server that provides authentication and distributes cryptographic keys, commonly used in Kerberos environments."
+  },
+  {
+    "question": "KEK",
+    "answer": "Key Encryption Key",
+    "explanation": "A cryptographic key used to encrypt other keys, adding an extra layer of security."
+  },
+  {
+    "question": "L2TP",
+    "answer": "Layer 2 Tunneling Protocol",
+    "explanation": "A tunneling protocol used to support virtual private networks, often combined with IPsec for security."
+  },
+  {
+    "question": "LAN",
+    "answer": "Local Area Network",
+    "explanation": "A network that connects devices within a limited geographic area such as a home, school, or office."
+  },
+  {
+    "question": "LDAP",
+    "answer": "Lightweight Directory Access Protocol",
+    "explanation": "A protocol used to access and manage directory information services over a network."
+  },
+  {
+    "question": "LEAP",
+    "answer": "Lightweight Extensible Authentication Protocol",
+    "explanation": "A Cisco-developed authentication protocol used in wireless networks, now considered insecure."
+  },
+  {
+    "question": "MaaS",
+    "answer": "Monitoring as a Service",
+    "explanation": "A cloud-based service that provides monitoring of applications, systems, or infrastructure."
+  },
+  {
+    "question": "MAC",
+    "answer": "Mandatory Access Control",
+    "explanation": "An access control model where access rights are regulated by a central authority based on security classifications."
+  },
+  {
+    "question": "MAC",
+    "answer": "Media Access Control",
+    "explanation": "A sublayer of the data link layer responsible for controlling how devices access and transmit data on a network."
+  },
+  {
+    "question": "MAC",
+    "answer": "Message Authentication Code",
+    "explanation": "A cryptographic value used to verify the integrity and authenticity of a message."
+  },
+  {
+    "question": "MAN",
+    "answer": "Metropolitan Area Network",
+    "explanation": "A network that spans a city or large campus, larger than a LAN but smaller than a WAN."
+  },
+  {
+    "question": "MBR",
+    "answer": "Master Boot Record",
+    "explanation": "The first sector of a storage device that contains bootloader code and partition information."
+  },
+  {
+    "question": "MD5",
+    "answer": "Message Digest 5",
+    "explanation": "A hashing algorithm that produces a 128-bit hash value, now considered insecure due to vulnerabilities."
+  },
+  {
+    "question": "MDF",
+    "answer": "Main Distribution Frame",
+    "explanation": "The primary network connection point within a building where external lines connect to internal wiring."
+  },
+  {
+    "question": "MDM",
+    "answer": "Mobile Device Management",
+    "explanation": "A system used to manage, monitor, and secure mobile devices within an organization."
+  },
+  {
+    "question": "MFA",
+    "answer": "Multifactor Authentication",
+    "explanation": "A security process requiring users to provide two or more verification factors to gain access."
+  },
+  {
+    "question": "MFD",
+    "answer": "Multifunction Device",
+    "explanation": "A device that combines multiple functions such as printing, scanning, copying, and faxing."
+  },
+  {
+    "question": "MFP",
+    "answer": "Multifunction Printer",
+    "explanation": "A printer that includes additional features like scanning, copying, and faxing."
+  },
+  {
+    "question": "ML",
+    "answer": "Machine Learning",
+    "explanation": "A subset of artificial intelligence that enables systems to learn and improve from data without explicit programming."
+  },
+  {
+    "question": "MMS",
+    "answer": "Multimedia Message Service",
+    "explanation": "A messaging service used to send multimedia content such as images, audio, and video."
+  },
+  {
+    "question": "MOA",
+    "answer": "Memorandum of Agreement",
+    "explanation": "A formal agreement outlining the roles and responsibilities of parties involved in a partnership."
+  },
+  {
+    "question": "MOU",
+    "answer": "Memorandum of Understanding",
+    "explanation": "A non-binding agreement that outlines mutual expectations between parties."
+  },
+  {
+    "question": "MPLS",
+    "answer": "Multi-protocol Label Switching",
+    "explanation": "A technique for speeding up network traffic flow by directing data based on labels instead of IP addresses."
+  },
+  {
+    "question": "MSA",
+    "answer": "Master Service Agreement",
+    "explanation": "A contract that outlines the general terms and conditions between parties for future transactions or services."
+  },
+  {
+    "question": "MSCHAP",
+    "answer": "Microsoft Challenge Handshake Authentication Protocol",
+    "explanation": "An authentication protocol developed by Microsoft for verifying users over networks."
+  },
+  {
+    "question": "MSP",
+    "answer": "Managed Service Provider",
+    "explanation": "A company that remotely manages a customer’s IT infrastructure and end-user systems."
+  },
+  {
+    "question": "MSSP",
+    "answer": "Managed Security Service Provider",
+    "explanation": "A provider that offers outsourced monitoring and management of security systems and devices."
+  },
+  {
+    "question": "MTBF",
+    "answer": "Mean Time Between Failures",
+    "explanation": "A metric that predicts the average time between system or component failures."
+  },
+  {
+    "question": "MTTF",
+    "answer": "Mean Time to Failure",
+    "explanation": "The average time a system or component is expected to operate before failing."
+  },
+  {
+    "question": "MTTR",
+    "answer": "Mean Time to Recover",
+    "explanation": "The average time required to restore a system after a failure."
+  },
+  {
+    "question": "MTU",
+    "answer": "Maximum Transmission Unit",
+    "explanation": "The largest size of a packet that can be transmitted over a network without fragmentation."
+  },
+  {
+    "question": "NAC",
+    "answer": "Network Access Control",
+    "explanation": "A security solution that enforces policies on devices attempting to access a network, ensuring only authorized and compliant devices are allowed."
+  },
+  {
+    "question": "NAT",
+    "answer": "Network Address Translation",
+    "explanation": "A method used to map private IP addresses to a public IP address, conserving address space and adding a layer of security."
+  },
+  {
+    "question": "NDA",
+    "answer": "Non-disclosure Agreement",
+    "explanation": "A legal contract that restricts the sharing of confidential information between parties."
+  },
+  {
+    "question": "NFC",
+    "answer": "Near Field Communication",
+    "explanation": "A short-range wireless communication technology that enables devices to exchange data when in close proximity."
+  },
+  {
+    "question": "NGFW",
+    "answer": "Next-generation Firewall",
+    "explanation": "An advanced firewall that includes features such as deep packet inspection, intrusion prevention, and application awareness."
+  },
+  {
+    "question": "NIDS",
+    "answer": "Network-based Intrusion Detection System",
+    "explanation": "A system that monitors network traffic for suspicious activity and potential threats."
+  },
+  {
+    "question": "NIPS",
+    "answer": "Network-based Intrusion Prevention System",
+    "explanation": "A system that monitors network traffic and actively blocks detected malicious activity."
+  },
+  {
+    "question": "NIST",
+    "answer": "National Institute of Standards & Technology",
+    "explanation": "A U.S. organization that develops cybersecurity standards, guidelines, and best practices."
+  },
+  {
+    "question": "NTFS",
+    "answer": "New Technology File System",
+    "explanation": "A file system developed by Microsoft that includes features like permissions, encryption, and journaling."
+  },
+  {
+    "question": "NTLM",
+    "answer": "New Technology LAN Manager",
+    "explanation": "A suite of Microsoft security protocols used for authentication, now largely replaced by Kerberos."
+  },
+  {
+    "question": "NTP",
+    "answer": "Network Time Protocol",
+    "explanation": "A protocol used to synchronize clocks of computers over a network."
+  },
+  {
+    "question": "OAUTH",
+    "answer": "Open Authorization",
+    "explanation": "An authorization framework that allows third-party applications to access user resources without sharing credentials."
+  },
+  {
+    "question": "OCSP",
+    "answer": "Online Certificate Status Protocol",
+    "explanation": "A protocol used to check the revocation status of digital certificates in real time."
+  },
+  {
+    "question": "OID",
+    "answer": "Object Identifier",
+    "explanation": "A unique identifier used in various protocols to name objects such as algorithms or attributes."
+  },
+  {
+    "question": "OS",
+    "answer": "Operating System",
+    "explanation": "Software that manages hardware resources and provides services for computer programs."
+  },
+  {
+    "question": "OSINT",
+    "answer": "Open-source Intelligence",
+    "explanation": "Information collected from publicly available sources for intelligence and security purposes."
+  },
+  {
+    "question": "OSPF",
+    "answer": "Open Shortest Path First",
+    "explanation": "A routing protocol used to find the best path for data through a network using link-state routing."
+  },
+  {
+    "question": "OT",
+    "answer": "Operational Technology",
+    "explanation": "Hardware and software systems used to monitor and control physical processes, often in industrial environments."
+  },
+  {
+    "question": "OTA",
+    "answer": "Over the Air",
+    "explanation": "Wireless delivery of updates or data to devices without physical connections."
+  },
+  {
+    "question": "OVAL",
+    "answer": "Open Vulnerability Assessment Language",
+    "explanation": "A standard used to represent system security states and vulnerabilities in a structured format."
+  },
+  {
+    "question": "P12",
+    "answer": "PKCS #12",
+    "explanation": "A file format used to store and transport private keys, certificates, and other cryptographic data securely."
+  },
+  {
+    "question": "P2P",
+    "answer": "Peer to Peer",
+    "explanation": "A network model where devices communicate directly with each other without a central server."
+  },
+  {
+    "question": "PaaS",
+    "answer": "Platform as a Service",
+    "explanation": "A cloud computing model that provides a platform allowing customers to develop, run, and manage applications without managing infrastructure."
+  },
+  {
+    "question": "PAC",
+    "answer": "Proxy Auto Configuration",
+    "explanation": "A script that determines how web browsers and other user agents can automatically choose the appropriate proxy server."
+  },
+  {
+    "question": "PAM",
+    "answer": "Privileged Access Management",
+    "explanation": "A security approach focused on controlling and monitoring access to critical systems by privileged users."
+  },
+  {
+    "question": "PAM",
+    "answer": "Pluggable Authentication Modules",
+    "explanation": "A flexible authentication framework used in Unix/Linux systems to integrate multiple authentication methods."
+  },
+  {
+    "question": "PAP",
+    "answer": "Password Authentication Protocol",
+    "explanation": "An authentication protocol that transmits passwords in plaintext, making it insecure."
+  },
+  {
+    "question": "PAT",
+    "answer": "Port Address Translation",
+    "explanation": "A form of NAT that maps multiple private IP addresses to a single public IP using different ports."
+  },
+  {
+    "question": "PBKDF2",
+    "answer": "Password-based Key Derivation Function 2",
+    "explanation": "A key derivation function that applies hashing with a salt and multiple iterations to strengthen passwords."
+  },
+  {
+    "question": "PBX",
+    "answer": "Private Branch Exchange",
+    "explanation": "A private telephone network used within an organization for internal and external communication."
+  },
+  {
+    "question": "PCAP",
+    "answer": "Packet Capture",
+    "explanation": "A method of capturing network traffic data for analysis and troubleshooting."
+  },
+  {
+    "question": "PCI DSS",
+    "answer": "Payment Card Industry Data Security Standard",
+    "explanation": "A set of security standards designed to protect credit card information during processing and storage."
+  },
+  {
+    "question": "PDU",
+    "answer": "Power Distribution Unit",
+    "explanation": "A device used to distribute electric power to multiple devices, often used in data centers."
+  },
+  {
+    "question": "PEAP",
+    "answer": "Protected Extensible Authentication Protocol",
+    "explanation": "An authentication protocol that encapsulates EAP within a secure TLS tunnel to protect credentials."
+  },
+  {
+    "question": "PED",
+    "answer": "Personal Electronic Device",
+    "explanation": "Any portable electronic device such as smartphones, tablets, or laptops used by individuals."
+  },
+  {
+    "question": "PEM",
+    "answer": "Privacy Enhanced Mail",
+    "explanation": "A file format used for storing and transmitting cryptographic keys and certificates."
+  },
+  {
+    "question": "PFS",
+    "answer": "Perfect Forward Secrecy",
+    "explanation": "A property of secure communication where session keys are not compromised even if the private key is exposed."
+  },
+  {
+    "question": "PGP",
+    "answer": "Pretty Good Privacy",
+    "explanation": "An encryption program used for secure communication and data protection through encryption and digital signatures."
+  },
+  {
+    "question": "PHI",
+    "answer": "Personal Health Information",
+    "explanation": "Sensitive health-related data that can be used to identify an individual."
+  },
+  {
+    "question": "PII",
+    "answer": "Personally Identifiable Information",
+    "explanation": "Any information that can be used to identify an individual, such as name, SSN, or email address."
+  },
+  {
+    "question": "PIV",
+    "answer": "Personal Identity Verification",
+    "explanation": "A standardized identification system used by federal employees and contractors for secure access."
+  },
+  {
+    "question": "PKCS",
+    "answer": "Public Key Cryptography Standards",
+    "explanation": "A group of standards that define formats and protocols for public key cryptography."
+  },
+  {
+    "question": "PKI",
+    "answer": "Public Key Infrastructure",
+    "explanation": "A framework for managing digital certificates, encryption keys, and secure communications."
+  },
+  {
+    "question": "POP",
+    "answer": "Post Office Protocol",
+    "explanation": "An email protocol used to retrieve messages from a mail server, typically downloading them locally."
+  },
+  {
+    "question": "POTS",
+    "answer": "Plain Old Telephone Service",
+    "explanation": "Traditional analog voice telephone service."
+  },
+  {
+    "question": "PPP",
+    "answer": "Point-to-Point Protocol",
+    "explanation": "A data link protocol used to establish direct connections between two network nodes."
+  },
+  {
+    "question": "PPTP",
+    "answer": "Point-to-Point Tunneling Protocol",
+    "explanation": "An older VPN protocol used to create secure tunnels, now considered insecure."
+  },
+  {
+    "question": "PSK",
+    "answer": "Pre-shared Key",
+    "explanation": "A shared secret used for authentication in secure communications, often in wireless networks."
+  },
+  {
+    "question": "PTZ",
+    "answer": "Pan-tilt-zoom",
+    "explanation": "A type of camera that can move horizontally, vertically, and zoom to monitor areas."
+  },
+  {
+    "question": "PUP",
+    "answer": "Potentially Unwanted Program",
+    "explanation": "Software that may be unwanted or harmful, often installed without clear user consent."
+  },
+  {
+    "question": "RA",
+    "answer": "Recovery Agent",
+    "explanation": "An entity or role that can recover encrypted data, typically through access to backup keys or certificates."
+  },
+  {
+    "question": "RA",
+    "answer": "Registration Authority",
+    "explanation": "An entity that verifies user identities and submits certificate requests to a certificate authority."
+  },
+  {
+    "question": "RACE",
+    "answer": "Research and Development in Advanced Communications Technologies in Europe",
+    "explanation": "A European initiative focused on advancing communication technologies and infrastructure."
+  },
+  {
+    "question": "RAD",
+    "answer": "Rapid Application Development",
+    "explanation": "A software development approach that emphasizes quick development and iteration with minimal planning."
+  },
+  {
+    "question": "RADIUS",
+    "answer": "Remote Authentication Dial-in User Service",
+    "explanation": "A networking protocol that provides centralized authentication, authorization, and accounting for users."
+  },
+  {
+    "question": "RAID",
+    "answer": "Redundant Array of Inexpensive Disks",
+    "explanation": "A data storage technology that combines multiple physical disks for redundancy, performance, or both."
+  },
+  {
+    "question": "RAS",
+    "answer": "Remote Access Server",
+    "explanation": "A server that provides remote users with access to a network over a communication link."
+  },
+  {
+    "question": "RAT",
+    "answer": "Remote Access Trojan",
+    "explanation": "Malicious software that allows attackers to remotely control a compromised system."
+  },
+  {
+    "question": "RBAC",
+    "answer": "Role-based Access Control",
+    "explanation": "An access control model where permissions are assigned based on user roles within an organization."
+  },
+  {
+    "question": "RBAC",
+    "answer": "Rule-based Access Control",
+    "explanation": "An access control model where access decisions are based on predefined rules and conditions."
+  },
+  {
+    "question": "RC4",
+    "answer": "Rivest Cipher version 4",
+    "explanation": "A stream cipher once widely used for encryption, now considered insecure due to vulnerabilities."
+  },
+  {
+    "question": "RDP",
+    "answer": "Remote Desktop Protocol",
+    "explanation": "A protocol developed by Microsoft that allows users to remotely access and control another computer."
+  },
+  {
+    "question": "RFID",
+    "answer": "Radio Frequency Identifier",
+    "explanation": "A technology that uses electromagnetic fields to automatically identify and track tags attached to objects."
+  },
+  {
+    "question": "RIPEMD",
+    "answer": "RACE Integrity Primitives Evaluation Message Digest",
+    "explanation": "A family of cryptographic hash functions designed as an alternative to MD5 and SHA."
+  },
+  {
+    "question": "ROI",
+    "answer": "Return on Investment",
+    "explanation": "A financial metric used to evaluate the efficiency or profitability of an investment."
+  },
+  {
+    "question": "RPO",
+    "answer": "Recovery Point Objective",
+    "explanation": "The maximum acceptable amount of data loss measured in time during a disruption."
+  },
+  {
+    "question": "RSA",
+    "answer": "Rivest, Shamir, & Adleman",
+    "explanation": "A widely used public-key cryptographic algorithm for secure data transmission."
+  },
+  {
+    "question": "RTBH",
+    "answer": "Remotely Triggered Black Hole",
+    "explanation": "A technique used to mitigate DDoS attacks by dropping malicious traffic at the network edge."
+  },
+  {
+    "question": "RTO",
+    "answer": "Recovery Time Objective",
+    "explanation": "The maximum acceptable amount of time required to restore a system after a disruption."
+  },
+  {
+    "question": "RTOS",
+    "answer": "Real-time Operating System",
+    "explanation": "An operating system designed to process data and respond to inputs within a guaranteed time frame."
+  },
+  {
+    "question": "RTP",
+    "answer": "Real-time Transport Protocol",
+    "explanation": "A protocol used to deliver audio and video over IP networks in real time."
+  },
+  {
+    "question": "S/MIME",
+    "answer": "Secure/Multipurpose Internet Mail Extensions",
+    "explanation": "A standard for encrypting and digitally signing email messages to ensure confidentiality and integrity."
+  },
+  {
+    "question": "SaaS",
+    "answer": "Software as a Service",
+    "explanation": "A cloud computing model where applications are delivered over the internet and managed by a provider."
+  },
+  {
+    "question": "SAE",
+    "answer": "Simultaneous Authentication of Equals",
+    "explanation": "A secure password-based authentication method used in WPA3 wireless networks."
+  },
+  {
+    "question": "SAML",
+    "answer": "Security Assertions Markup Language",
+    "explanation": "An XML-based standard for exchanging authentication and authorization data between parties, commonly used for SSO."
+  },
+  {
+    "question": "SAN",
+    "answer": "Storage Area Network",
+    "explanation": "A high-speed network that provides access to consolidated block-level storage."
+  },
+  {
+    "question": "SAN",
+    "answer": "Subject Alternative Name",
+    "explanation": "An extension in digital certificates that allows multiple domain names to be protected by a single certificate."
+  },
+  {
+    "question": "SASE",
+    "answer": "Secure Access Service Edge",
+    "explanation": "A cloud-based security model that combines networking and security services into a unified platform."
+  },
+  {
+    "question": "SCADA",
+    "answer": "Supervisory Control and Data Acquisition",
+    "explanation": "Systems used to monitor and control industrial processes and critical infrastructure."
+  },
+  {
+    "question": "SCAP",
+    "answer": "Security Content Automation Protocol",
+    "explanation": "A suite of standards used to automate vulnerability management and security policy compliance."
+  },
+  {
+    "question": "SCEP",
+    "answer": "Simple Certificate Enrollment Protocol",
+    "explanation": "A protocol used to automate the enrollment and management of digital certificates."
+  },
+  {
+    "question": "SD-WAN",
+    "answer": "Software-defined Wide Area Network",
+    "explanation": "A technology that uses software to manage and optimize wide area network connections."
+  },
+  {
+    "question": "SDK",
+    "answer": "Software Development Kit",
+    "explanation": "A collection of tools and libraries used by developers to create applications for specific platforms."
+  },
+  {
+    "question": "SDLC",
+    "answer": "Software Development Lifecycle",
+    "explanation": "A structured process for planning, creating, testing, and deploying software."
+  },
+  {
+    "question": "SDLM",
+    "answer": "Software Development Lifecycle Methodology",
+    "explanation": "A specific approach or model used to implement the SDLC, such as Agile or Waterfall."
+  },
+  {
+    "question": "SDN",
+    "answer": "Software-defined Networking",
+    "explanation": "An approach to networking that uses software-based controllers to manage network traffic dynamically."
+  },
+  {
+    "question": "SE Linux",
+    "answer": "Security-enhanced Linux",
+    "explanation": "A Linux security module that enforces mandatory access control policies."
+  },
+  {
+    "question": "SED",
+    "answer": "Self-encrypting Drives",
+    "explanation": "Storage devices that automatically encrypt data using built-in hardware encryption."
+  },
+  {
+    "question": "SEH",
+    "answer": "Structured Exception Handler",
+    "explanation": "A Windows mechanism for handling runtime errors and exceptions in applications."
+  },
+  {
+    "question": "SFTP",
+    "answer": "Secured File Transfer Protocol",
+    "explanation": "A secure file transfer protocol that uses SSH to encrypt data during transmission."
+  },
+  {
+    "question": "SHA",
+    "answer": "Secure Hashing Algorithm",
+    "explanation": "A family of cryptographic hash functions used to ensure data integrity."
+  },
+  {
+    "question": "SHTTP",
+    "answer": "Secure Hypertext Transfer Protocol",
+    "explanation": "An older protocol designed to provide secure communication over HTTP, largely replaced by HTTPS."
+  },
+  {
+    "question": "SIEM",
+    "answer": "Security Information and Event Management",
+    "explanation": "A solution that aggregates and analyzes security data from multiple sources for threat detection and response."
+  },
+  {
+    "question": "SIM",
+    "answer": "Subscriber Identity Module",
+    "explanation": "A smart card used in mobile devices to store subscriber identity and authentication information."
+  },
+  {
+    "question": "SLA",
+    "answer": "Service-level Agreement",
+    "explanation": "A contract that defines the level of service expected between a provider and a customer."
+  },
+  {
+    "question": "SLE",
+    "answer": "Single Loss Expectancy",
+    "explanation": "The expected monetary loss from a single occurrence of a risk event."
+  },
+  {
+    "question": "SMS",
+    "answer": "Short Message Service",
+    "explanation": "A text messaging service used for sending short messages between mobile devices."
+  },
+  {
+    "question": "SMTP",
+    "answer": "Simple Mail Transfer Protocol",
+    "explanation": "A protocol used to send email messages between servers."
+  },
+  {
+    "question": "SMTPS",
+    "answer": "Simple Mail Transfer Protocol Secure",
+    "explanation": "SMTP enhanced with encryption using SSL/TLS to secure email transmission."
+  },
+  {
+    "question": "SNMP",
+    "answer": "Simple Network Management Protocol",
+    "explanation": "A protocol used for monitoring and managing network devices."
+  },
+  {
+    "question": "SOAP",
+    "answer": "Simple Object Access Protocol",
+    "explanation": "A protocol for exchanging structured information in web services using XML."
+  },
+  {
+    "question": "SOAR",
+    "answer": "Security Orchestration, Automation, Response",
+    "explanation": "A system that automates security operations and incident response workflows."
+  },
+  {
+    "question": "SoC",
+    "answer": "System on Chip",
+    "explanation": "An integrated circuit that combines all components of a computer or system onto a single chip."
+  },
+  {
+    "question": "SOC",
+    "answer": "Security Operations Center",
+    "explanation": "A centralized team responsible for monitoring, detecting, and responding to cybersecurity incidents."
+  },
+  {
+    "question": "SOW",
+    "answer": "Statement of Work",
+    "explanation": "A document that outlines project objectives, deliverables, and timelines between parties."
+  },
+  {
+    "question": "SPF",
+    "answer": "Sender Policy Framework",
+    "explanation": "An email authentication method used to prevent spoofing by verifying sending mail servers."
+  },
+  {
+    "question": "SPIM",
+    "answer": "Spam over Internet Messaging",
+    "explanation": "Unsolicited messages sent over instant messaging platforms."
+  },
+  {
+    "question": "SQL",
+    "answer": "Structured Query Language",
+    "explanation": "A programming language used to manage and query relational databases."
+  },
+  {
+    "question": "SQLi",
+    "answer": "SQL Injection",
+    "explanation": "A web attack that injects malicious SQL code into a database query to manipulate data."
+  },
+  {
+    "question": "SRTP",
+    "answer": "Secure Real-Time Protocol",
+    "explanation": "A protocol that provides encryption and authentication for real-time communications like voice and video."
+  },
+  {
+    "question": "SSD",
+    "answer": "Solid State Drive",
+    "explanation": "A storage device that uses flash memory instead of spinning disks, offering faster performance."
+  },
+  {
+    "question": "SSH",
+    "answer": "Secure Shell",
+    "explanation": "A protocol used to securely access and manage remote systems over a network."
+  },
+  {
+    "question": "SSL",
+    "answer": "Secure Sockets Layer",
+    "explanation": "A deprecated protocol used to encrypt communications between systems, replaced by TLS."
+  },
+  {
+    "question": "SSO",
+    "answer": "Single Sign-on",
+    "explanation": "An authentication process that allows users to access multiple systems with a single login."
+  },
+  {
+    "question": "STIX",
+    "answer": "Structured Threat Information eXchange",
+    "explanation": "A standardized language for sharing cyber threat intelligence."
+  },
+  {
+    "question": "SWG",
+    "answer": "Secure Web Gateway",
+    "explanation": "A security solution that filters web traffic to protect users from malicious content."
+  },
+  {
+    "question": "TACACS+",
+    "answer": "Terminal Access Controller Access Control System",
+    "explanation": "A remote authentication protocol that provides centralized authentication, authorization, and accounting with full packet encryption."
+  },
+  {
+    "question": "TAXII",
+    "answer": "Trusted Automated eXchange of Indicator Information",
+    "explanation": "A protocol used to exchange cyber threat intelligence data between organizations."
+  },
+  {
+    "question": "TCP/IP",
+    "answer": "Transmission Control Protocol/Internet Protocol",
+    "explanation": "A suite of communication protocols used to interconnect network devices on the internet."
+  },
+  {
+    "question": "TGT",
+    "answer": "Ticket Granting Ticket",
+    "explanation": "A Kerberos authentication token used to request access to services without re-entering credentials."
+  },
+  {
+    "question": "TKIP",
+    "answer": "Temporal Key Integrity Protocol",
+    "explanation": "An older wireless security protocol used in WPA to provide encryption, now considered insecure."
+  },
+  {
+    "question": "TLS",
+    "answer": "Transport Layer Security",
+    "explanation": "A cryptographic protocol that provides secure communication over a network, replacing SSL."
+  },
+  {
+    "question": "TOC",
+    "answer": "Time-of-check",
+    "explanation": "The moment when a system verifies a condition, often referenced in TOC/TOU race condition vulnerabilities."
+  },
+  {
+    "question": "TOTP",
+    "answer": "Time-based One-time Password",
+    "explanation": "An authentication method that generates a temporary password based on time and a shared secret."
+  },
+  {
+    "question": "TOU",
+    "answer": "Time-of-use",
+    "explanation": "The moment when a system uses a resource, often associated with race condition vulnerabilities when paired with TOC."
+  },
+  {
+    "question": "TPM",
+    "answer": "Trusted Platform Module",
+    "explanation": "A hardware-based security component that securely stores cryptographic keys and supports system integrity checks."
+  },
+  {
+    "question": "TTP",
+    "answer": "Tactics, Techniques, and Procedures",
+    "explanation": "The behavior patterns and methods used by threat actors to carry out attacks."
+  },
+  {
+    "question": "TSIG",
+    "answer": "Transaction Signature",
+    "explanation": "A mechanism used to authenticate DNS messages using shared secret keys."
+  },
+  {
+    "question": "UAT",
+    "answer": "User Acceptance Testing",
+    "explanation": "The process where end users test a system to ensure it meets requirements before deployment."
+  },
+  {
+    "question": "UAV",
+    "answer": "Unmanned Aerial Vehicle",
+    "explanation": "An aircraft operated without a human pilot onboard, commonly known as a drone."
+  },
+  {
+    "question": "UDP",
+    "answer": "User Datagram Protocol",
+    "explanation": "A connectionless transport protocol that provides fast but unreliable data transmission."
+  },
+  {
+    "question": "UEFI",
+    "answer": "Unified Extensible Firmware Interface",
+    "explanation": "A modern firmware interface that replaces BIOS, providing enhanced boot and security features."
+  },
+  {
+    "question": "UEM",
+    "answer": "Unified Endpoint Management",
+    "explanation": "A system used to manage and secure all endpoint devices from a single platform."
+  },
+  {
+    "question": "UPS",
+    "answer": "Uninterruptable Power Supply",
+    "explanation": "A device that provides backup power to systems during electrical outages."
+  },
+  {
+    "question": "URI",
+    "answer": "Uniform Resource Identifier",
+    "explanation": "A string used to identify a resource on a network, including URLs and URNs."
+  },
+  {
+    "question": "URL",
+    "answer": "Universal Resource Locator",
+    "explanation": "A specific type of URI that provides the address of a resource on the internet."
+  },
+  {
+    "question": "USB",
+    "answer": "Universal Serial Bus",
+    "explanation": "A standard interface for connecting peripherals to computers and transferring data."
+  },
+  {
+    "question": "USB OTG",
+    "answer": "USB On the Go",
+    "explanation": "A specification that allows USB devices to act as a host, enabling direct communication between devices."
+  },
+  {
+    "question": "UTM",
+    "answer": "Unified Threat Management",
+    "explanation": "A security solution that integrates multiple security features such as firewall, antivirus, and intrusion prevention into one system."
+  },
+  {
+    "question": "UTP",
+    "answer": "Unshielded Twisted Pair",
+    "explanation": "A type of cabling used in networking that consists of pairs of wires twisted together to reduce interference."
+  },
+  {
+    "question": "VBA",
+    "answer": "Visual Basic",
+    "explanation": "A programming language developed by Microsoft, often used for automation within Office applications."
+  },
+  {
+    "question": "VDE",
+    "answer": "Virtual Desktop Environment",
+    "explanation": "A desktop environment that runs on a virtual machine and is accessed remotely by users."
+  },
+  {
+    "question": "VDI",
+    "answer": "Virtual Desktop Infrastructure",
+    "explanation": "A technology that hosts desktop environments on centralized servers and delivers them to users over a network."
+  },
+  {
+    "question": "VLAN",
+    "answer": "Virtual Local Area Network",
+    "explanation": "A logical grouping of network devices that allows segmentation of networks without physical separation."
+  },
+  {
+    "question": "VLSM",
+    "answer": "Variable Length Subnet Masking",
+    "explanation": "A method of subnetting that allows different subnet sizes within the same network."
+  },
+  {
+    "question": "VM",
+    "answer": "Virtual Machine",
+    "explanation": "A software-based emulation of a physical computer that runs its own operating system and applications."
+  },
+  {
+    "question": "VoIP",
+    "answer": "Voice over IP",
+    "explanation": "A technology that allows voice communication over IP networks instead of traditional telephone lines."
+  },
+  {
+    "question": "VPC",
+    "answer": "Virtual Private Cloud",
+    "explanation": "A logically isolated section of a public cloud where resources can be securely deployed."
+  },
+  {
+    "question": "VPN",
+    "answer": "Virtual Private Network",
+    "explanation": "A secure connection that encrypts data and allows remote access to a private network over the internet."
+  },
+  {
+    "question": "VTC",
+    "answer": "Video Teleconferencing",
+    "explanation": "Real-time video communication between users in different locations."
+  },
+  {
+    "question": "WAF",
+    "answer": "Web Application Firewall",
+    "explanation": "A firewall that monitors and filters HTTP traffic to protect web applications from attacks."
+  },
+  {
+    "question": "WAP",
+    "answer": "Wireless Access Point",
+    "explanation": "A device that allows wireless devices to connect to a wired network using Wi-Fi."
+  },
+  {
+    "question": "WEP",
+    "answer": "Wired Equivalent Privacy",
+    "explanation": "An outdated wireless security protocol that is vulnerable and has been replaced by WPA/WPA2/WPA3."
+  },
+  {
+    "question": "WIDS",
+    "answer": "Wireless Intrusion Detection System",
+    "explanation": "A system that monitors wireless networks for unauthorized access and suspicious activity."
+  },
+  {
+    "question": "WIPS",
+    "answer": "Wireless Intrusion Prevention System",
+    "explanation": "A system that detects and actively prevents unauthorized wireless access and attacks."
+  },
+  {
+    "question": "WO",
+    "answer": "Work Order",
+    "explanation": "A formal request or document that authorizes and tracks work to be completed."
+  },
+  {
+    "question": "WPA",
+    "answer": "Wi-Fi Protected Access",
+    "explanation": "A wireless security protocol designed to improve upon WEP, providing stronger encryption."
+  },
+  {
+    "question": "WPS",
+    "answer": "Wi-Fi Protected Setup",
+    "explanation": "A feature that simplifies connecting devices to a wireless network, though it has security vulnerabilities."
+  },
+  {
+    "question": "WTLS",
+    "answer": "Wireless TLS",
+    "explanation": "A security protocol designed to provide encryption for wireless communication, based on TLS."
+  },
+  {
+    "question": "XDR",
+    "answer": "Extended Detection and Response",
+    "explanation": "A security solution that integrates and analyzes data from multiple security layers for improved threat detection and response."
+  },
+  {
+    "question": "XML",
+    "answer": "Extensible Markup Language",
+    "explanation": "A markup language used to store and transport data in a structured, readable format."
+  },
+  {
+    "question": "XOR",
+    "answer": "Exclusive Or",
+    "explanation": "A logical operation used in cryptography where the output is true if inputs differ."
+  },
+  {
+    "question": "XSRF",
+    "answer": "Cross-site Request Forgery",
+    "explanation": "A web attack that tricks a user into performing unintended actions on a trusted site."
+  },
+  {
+    "question": "XSS",
+    "answer": "Cross-site Scripting",
+    "explanation": "A web vulnerability that allows attackers to inject malicious scripts into web pages viewed by users."
+  }
+]
